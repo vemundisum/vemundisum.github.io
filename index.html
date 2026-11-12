@@ -1,0 +1,1087 @@
+<!doctype html><html lang="nb"><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body><meta name="description" content="Arkitektkontor på Tåsen for boliger, hytter, tilbygg og renovering."><title>Vemund L. Isum</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap">
+<style id="site-css">
+/* Layout: three columns (sticky logo 25vw | portrait carousel image | project info 25vw), vw-based type, rotated edge buttons, light grey office band, bold fixed footer stripe. Single light look by design. */
+:root{
+  --bg:#ffffff; --fg:#000000; --grey:#808080; --line:#dddddd; --red:#c1240f; --link:#0000ee;
+  --office:#e8e8e6; --hover-blue:#6a81d7; --hover-yellow:#f3cd25; --ph:#ececec;
+  --sans:"Hanken Grotesk","Helvetica Neue",Arial,sans-serif;
+  --serif:"EB Garamond",Garamond,"Times New Roman",serif;
+  --fs-logo:6vw; --fs-title:3vw; --fs-body:1.5vw; --fs-small:1.2vw; --fs-footer:1.2vw;
+  --m:max(16px,2vw); --gap:2.5vw;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px}
+p{margin-top:0}
+a{color:var(--fg);text-decoration:none}
+a:hover{text-decoration:underline}
+button{font-family:var(--sans);color:var(--fg);cursor:pointer}
+:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+img{display:block;max-width:100%}
+.sr{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important}
+
+/* temasider (category strip) */
+.temasider{display:grid;grid-template-columns:repeat(auto-fill,minmax(15vw,1fr));gap:2vw;margin-inline:var(--m);position:sticky;top:env(safe-area-inset-top,0px);z-index:1000;font-size:var(--fs-body);font-weight:300;height:min-content}
+.temasider a{display:block;background:#ffffff94;border-radius:15px;padding:0 1vw 0 .5vw;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.temasider a[aria-current="true"]{text-decoration:underline}
+.banner{margin:1vh var(--m) 0;font-size:var(--fs-small);font-weight:300;color:var(--grey)}
+
+.container{width:100%;padding-top:5.5vh;padding-bottom:5vh}
+.three-column{display:flex;width:calc(100% - 2*var(--m));margin-inline:var(--m);gap:var(--gap)}
+.left-column{position:relative;width:25vw;flex-shrink:0}
+.logo{position:sticky;top:calc(env(safe-area-inset-top,0px) + var(--fs-body)*1.6 + 1vw);font-size:calc(var(--fs-logo)*.5);font-weight:700;line-height:1.15;z-index:900}
+.logo a{display:block}
+.logo-line{display:block;width:max-content;white-space:nowrap}
+.logo a:hover{text-decoration:none}
+.logo-tagline{font:500 var(--fs-small)/1.3 var(--serif);margin:1.5vh 0 0}
+
+/* carousel */
+.carousel{position:relative;overflow:hidden;flex:1;min-width:0;touch-action:pan-y}
+.carousel-wrapper{display:flex;transition:transform .5s ease-in-out}
+.slide{flex:0 0 100%;min-width:100%;display:flex;overflow:hidden;color:var(--fg)}
+.slide:hover{text-decoration:none}
+.center-column{flex:1;min-width:0;overflow:hidden;max-height:90vh;margin-right:2vw}
+.project-image{width:100%;aspect-ratio:3/4;object-fit:cover;transition:transform .3s ease-in-out}
+.slide:hover .project-image{transform:scale(1.05)}
+.slide:hover .project-title{text-decoration:underline}
+.right-column{width:25vw;flex-shrink:0;display:flex;flex-direction:column;align-items:flex-start}
+.project-title{font-size:var(--fs-title);font-weight:500;margin:0 0 1rem;line-height:1.15;padding-right:5vw}
+.project-meta{font-size:var(--fs-body);font-weight:300;margin:0}
+.project-year{margin-top:2.5rem}
+.carousel-number{position:absolute;right:0;top:0;font-size:var(--fs-body);font-weight:300;line-height:1.3;z-index:5}
+.carousel-button{position:absolute;top:50%;transform:translateY(-50%);background:transparent;border:0;padding:0;font-size:32px;z-index:6;color:var(--fg)}
+.carousel-button:hover{color:var(--grey)}
+.carousel-button.left{left:.5vw}
+.carousel-button.right{left:calc(100% - 25vw - 2vw - 1.4em)}
+.ph{width:100%;aspect-ratio:3/4;background:var(--ph);color:#9a9a9a;display:flex;align-items:center;justify-content:center}
+.ph svg{width:80%;height:auto}
+
+/* rotated edge buttons */
+.rail{position:fixed;top:50%;transform:translateY(-50%);writing-mode:vertical-rl;background:none;border:0;padding:0;font-size:var(--fs-body);font-weight:400;line-height:1.3;z-index:1100;color:var(--fg)}
+.rail:hover{text-decoration:underline}
+.rail.left{left:0}
+.rail.right{right:0}
+.rail.kontakt{display:none}
+.rail.pillar:hover{text-decoration:none}
+.rail.pillar a:hover{text-decoration:underline}
+
+/* thumbnail grid */
+.thumbnail-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(15vw,1fr));gap:2vw;margin:8vw var(--m) 2vw;grid-auto-flow:dense}
+.thumbnail-item{display:block;position:relative;min-width:0}
+.thumbnail-item:hover{text-decoration:none}
+.thumb-wrap{position:relative;width:100%;aspect-ratio:3/4;overflow:hidden;background:var(--ph)}
+.thumb-wrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .1s ease,transform .1s ease}
+.thumb-wrap .hov{opacity:0}
+.thumbnail-item:hover .thumb-wrap .base{opacity:0;transform:scale(1.02)}
+.thumbnail-item:hover .thumb-wrap .hov{opacity:1;transform:scale(1.05)}
+.thumbnail-item:hover .thumb-wrap .only{transform:scale(1.05)}
+.thumb-wrap .ph{position:absolute;inset:0;aspect-ratio:auto;height:100%}
+.thumbnail-info{margin-top:1vw}
+.thumbnail-title{font-size:var(--fs-footer);font-weight:700;margin:1vh 0 .5rem}
+.thumbnail-item:hover .thumbnail-title{text-decoration:underline}
+.thumb-meta{font-size:var(--fs-footer);font-weight:300;margin:0}
+.grid-mood{grid-column:span 2;grid-row:span 2;position:relative;overflow:hidden;min-width:0}
+.grid-mood img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.empty{font-size:var(--fs-body);font-weight:300;color:var(--grey);margin:8vw var(--m) 2vw}
+
+/* office section */
+.office-section{margin-top:10vh;background:var(--office);color:var(--fg);padding-bottom:6vw;scroll-margin-top:0}
+.office-text{font:300 var(--fs-small)/1.3 var(--serif);text-align:left}
+.office-section .office-text{font-family:var(--sans)}
+.office-text :where(*){font:inherit}
+.office-text p{margin:0 0 1.5rem}
+.office-text .hero-title{font-size:calc(var(--fs-small)*1.8);font-weight:600;line-height:1.1;margin:2vw 0 0}
+.office-text h3:not(.hero-title),.office-text b{font-weight:500}
+.office-text h3{margin:1.2rem 0}
+.office-section a{color:var(--fg);display:block;margin-bottom:2vh}
+.office-section .left-column{width:25vw}
+.office-center{flex:1;min-width:0;margin-right:2vw}
+.office-image{display:flex;overflow-x:auto;overflow-y:hidden;max-height:61vh;scroll-snap-type:x mandatory;overscroll-behavior-x:contain;scrollbar-color:#9a9a9a transparent}
+.office-card{display:flex;flex-direction:column;flex:0 0 auto;scroll-snap-align:center}
+.office-card img{max-height:52vh;width:auto;margin:2vw 1vw .5vw 0}
+.office-card p{font:italic 300 var(--fs-footer)/1.3 var(--sans);margin:0}
+.office-section .right-column{width:25vw;margin-top:2vw}
+.office-section .right-column p{margin:0 0 1.5rem}
+
+/* footer stripe */
+.bottom-border{position:fixed;z-index:1000;background:var(--bg);left:0;bottom:0;padding:0 var(--m) env(safe-area-inset-bottom,0px);width:100%;font-size:var(--fs-footer);font-weight:700;display:flex;align-items:baseline}
+.bottom-border span,.bottom-border a{display:block;padding-block:.3em}
+.contacts{width:48vw;display:inline-flex;justify-content:space-between;gap:1em}
+.copy{margin-left:auto}
+
+/* overlays */
+.overlay-backdrop{position:fixed;inset:0;background:transparent;z-index:9998}
+.overlay{position:fixed;top:0;left:0;width:50%;height:100%;background:var(--bg);z-index:9999;filter:drop-shadow(2px 4px 10px gray);animation:inL .25s ease-out}
+.overlay.right{left:auto;right:0;animation-name:inR}
+@keyframes inL{from{transform:translateX(-12px);opacity:0}}
+@keyframes inR{from{transform:translateX(12px);opacity:0}}
+.overlay-content{position:relative;font-weight:300;font-size:var(--fs-small);height:100%;overflow-y:auto;padding:5.5vh var(--m)}
+.overlay-close{position:absolute;top:12px;border:0;background:transparent;font-size:28px;line-height:1;z-index:2}
+.overlay:not(.right) .overlay-close{right:var(--m)}
+.overlay.right .overlay-close{left:var(--m)}
+.archive-table{width:100%;border-collapse:collapse;margin-top:20px;line-height:1.8}
+.archive-table td{padding:10px;text-align:left;border-bottom:1px solid var(--line);color:#333;vertical-align:top}
+.archive-table td a{display:block;color:var(--link)}
+.archive-table td:first-child{width:40%;word-spacing:1vw;color:var(--grey)}
+.archive-table td:nth-child(2){width:10%}
+.archive-table td:nth-child(3){width:30%;color:var(--grey)}
+.archive-table td:last-child{width:20%;color:var(--grey)}
+.archive-table tr:hover{background:var(--hover-blue)}
+.archive-table tr:hover td a{color:#fff;text-decoration:underline}
+.nyheter-table{line-height:2}
+.nyheter-table td:first-child{width:20%;word-spacing:normal}
+.nyheter-table td:nth-child(2){width:80%;color:#333}
+.nyheter-table td a{display:inline}
+.nyheter-table tr:hover{background:var(--hover-yellow)}
+.updated{margin-top:2rem;color:var(--grey)}
+
+/* project page */
+.prosjektside .left-column{width:16vw}
+.prosjektside .center-col{width:70vw;flex-shrink:0}
+.prosjektside .right-col{width:3vw;flex-shrink:0}
+.prosjekt-cover img{max-width:70vw;max-height:92vh;width:auto;height:auto;margin-left:0}
+.prosjekt-cover .ph{max-width:70vw;max-height:92vh;aspect-ratio:4/3;margin-left:0}
+.prosjekt-tekst{margin:3vh 0 5vh}
+.prosjekt-tekst h1{font-size:var(--fs-title);font-weight:500;margin:0 0 1rem;line-height:1.15}
+.prosjekt-tekst p{font-size:var(--fs-body);font-weight:300;margin:0}
+.galleri{display:flex;flex-direction:column;align-items:flex-start;gap:0;margin-left:calc(var(--m) + 18.5vw);margin-right:var(--m)}
+.bilde{margin:0 0 3vh;width:min-content}
+.bilde img{max-width:70vw;max-height:92vh;width:auto;height:auto}
+.bilde h4{font-size:var(--fs-title);font-weight:500;margin:1.5vh 0 0}
+.bilde p{font-size:var(--fs-body);font-weight:300;margin:.3vh 0 0;min-width:20vw}
+.galleri .office-text{width:45vw;font-size:var(--fs-body);margin:2vw 0;align-self:flex-start;max-width:100%}
+.galleri .office-text a{color:var(--link)}
+.related{padding-bottom:4vw}
+
+/* edit button */
+.edit-pill{position:fixed;right:var(--m);bottom:calc(env(safe-area-inset-bottom,0px) + 3rem);z-index:1200;background:#000;color:#fff;border:0;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,.25)}
+.edit-pill .dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--hover-yellow);margin-right:7px;vertical-align:1px}
+
+/* ---------- tablet ---------- */
+@media (max-width:1050px){
+  :root{--fs-body:2vw;--fs-small:1.5vw;--fs-footer:1.75vw}
+  .temasider{position:fixed;top:calc(env(safe-area-inset-top,0px) + 1vh);left:var(--m);right:var(--m);margin:0}
+  .container{padding-top:calc(5.5vh + 3vw)}
+  .carousel-button{display:none!important}
+  .carousel-number{font-weight:700}
+  .bottom-border{display:block}
+  .contacts{width:100%}
+  .copy{margin-left:0}
+  .office-card img{max-height:35dvh;padding-bottom:2vh}
+}
+
+/* ---------- phone ---------- */
+@media (max-width:800px){
+  :root{--fs-logo:10vw;--fs-title:8vw;--fs-body:5vw;--fs-small:3vw;--fs-footer:.95rem}
+  .temasider{position:fixed;top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 3.5rem);left:var(--m);right:var(--m);display:flex;gap:2vw;flex-wrap:nowrap;overflow-x:auto;font-size:var(--fs-footer);scrollbar-width:none}
+  .temasider::-webkit-scrollbar{display:none}
+  .temasider a{flex:0 0 auto;max-width:50vw;background:#ffffffc7;border-radius:12px;padding:.15rem 2.5vw;box-shadow:0 0 0 1px #0000000f}
+  .banner{margin-top:calc(env(safe-area-inset-top,0px) + 3.2rem)}
+  .container{padding-top:calc(env(safe-area-inset-top,0px) + 3.2rem);padding-bottom:7rem}
+  .three-column{flex-direction:column;align-items:stretch;margin-top:1vh;gap:0}
+  .left-column,.office-section .left-column,.prosjektside .left-column{width:100%}
+  .logo{position:relative;top:auto;margin:0 0 2vh;font-size:7vw}
+  .logo-tagline{display:none}
+  .slide{flex-direction:column}
+  .center-column{margin-right:0;max-height:none;margin-bottom:3vh}
+  .right-column{width:100%}
+  .project-title{padding-right:0}
+  .project-year{margin-top:2vh}
+  .carousel-number{top:.5vh;left:10px;right:auto;background:#35353557;color:#fff;padding:2px 6px;font-size:var(--fs-footer)}
+  .rail{writing-mode:horizontal-tb;transform:none;top:calc(env(safe-area-inset-top,0px) + 1vh);background:#ffffffba;border-radius:18px;padding:2px 10px;font-size:var(--fs-footer);white-space:nowrap}
+  .rail.left{left:auto;right:calc(var(--m) + 11.4rem)}
+  .rail.right{right:var(--m)}
+  .rail.kontakt{display:block;right:calc(var(--m) + 5.7rem)}
+  .rail.left.back{left:var(--m);right:auto}
+  .rail.pillar{top:auto;bottom:calc(env(safe-area-inset-bottom,0px) + 3.5rem);left:var(--m);right:var(--m);overflow-x:auto}
+  .rail.pillar a{display:inline;margin-left:.6em}
+  .thumbnail-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:3vw;margin-top:10vw}
+  .thumb-wrap{aspect-ratio:4/5}
+  .thumbnail-title{font-weight:600;margin-bottom:.5vh}
+  .thumbnail-title,.thumb-meta{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .office-section{display:flex;flex-direction:column;margin-top:10vh;padding-bottom:9rem}
+  .office-section .three-column{display:flex;flex-direction:column}
+  .office-section .left-column{order:1}
+  .office-section .right-column{order:2;width:100%;margin-top:0}
+  .office-center{order:3;margin-right:0}
+  .office-text{font-size:var(--fs-body)}
+  .office-text .hero-title{font-size:calc(var(--fs-body)*1.8)}
+  .office-card img{max-height:30vh;margin:2vw 2vw 2vw 0}
+  .bottom-border{padding:.4rem var(--m) calc(env(safe-area-inset-bottom,0px) + .4rem)}
+  .bottom-border span,.bottom-border a{padding:0}
+  .contacts{flex-wrap:wrap}
+  .overlay{width:100%}
+  .overlay-content{padding-top:calc(env(safe-area-inset-top,0px) + 4rem)}
+  .overlay .overlay-close{top:calc(env(safe-area-inset-top,0px) + 1rem)}
+  .archive-table td:first-child{word-spacing:normal}
+  .prosjektside .center-col,.prosjektside .right-col{width:100%}
+  .prosjekt-cover img,.prosjekt-cover .ph{max-width:100%;max-height:100dvh}
+  .galleri{margin-inline:var(--m)}
+  .bilde{width:100%}
+  .bilde img{max-width:100%;max-height:100dvh}
+  .galleri .office-text{width:100%;margin:2vh 0}
+  .edit-pill{bottom:calc(env(safe-area-inset-bottom,0px) + 6.5rem)}
+}
+
+/* zoomable images, sub-projects, lightbox */
+.prosjekt-cover img[data-zoom],.bilde img[data-zoom]{cursor:zoom-in}
+.prosjekt-tekst .overordnet{margin-top:1rem}
+.prosjekt-tekst .overordnet a{text-decoration:underline}
+.delprosjekter{margin:0 var(--m) 7vh calc(var(--m) + 18.5vw);width:70vw}
+.delprosjekter h2{font-size:var(--fs-body);font-weight:500;margin:0 0 1.5vw}
+.delprosjekter .thumbnail-grid{margin:0;grid-template-columns:repeat(3,minmax(0,1fr))}
+.delprosjekter .thumb-wrap{aspect-ratio:4/3}
+.lb{position:fixed;inset:0;z-index:10000;background:var(--bg);overflow:hidden;touch-action:none;user-select:none;-webkit-user-select:none;cursor:grab;outline:none;animation:lbin .18s ease-out}
+@keyframes lbin{from{opacity:0}}
+.lb.drag{cursor:grabbing}
+.lb img{position:absolute;left:0;top:0;transform-origin:0 0;max-width:none;max-height:none;will-change:transform;-webkit-user-drag:none}
+.lb button{position:absolute;background:none;border:0;color:var(--fg);font-size:34px;line-height:1;padding:14px 18px;z-index:2;cursor:pointer}
+.lb button:hover{color:var(--grey)}
+.lb .x{top:max(6px,env(safe-area-inset-top,0px));right:max(6px,env(safe-area-inset-right,0px))}
+.lb .p{left:6px;top:50%;transform:translateY(-50%)}
+.lb .n{right:6px;top:50%;transform:translateY(-50%)}
+.lb .cap{position:absolute;left:var(--m);right:var(--m);bottom:calc(env(safe-area-inset-bottom,0px) + .7rem);display:flex;justify-content:space-between;gap:2em;font-size:var(--fs-small);font-weight:300;pointer-events:none;z-index:2}
+.lb .cap span{background:#ffffffc7;padding:.1em .5em}
+.lb .zhint{position:absolute;top:calc(env(safe-area-inset-top,0px) + 1rem);left:var(--m);font-size:var(--fs-small);font-weight:300;color:var(--grey);pointer-events:none}
+@media (hover:none){.lb .zhint{display:none}}
+@media (max-width:1050px){.delprosjekter{margin-left:var(--m);width:auto}.galleri{margin-left:var(--m)}}
+@media (max-width:800px){
+  .prosjekt-cover img,.prosjekt-cover .ph{max-width:100%}
+  .delprosjekter{margin:0 var(--m) 5vh;width:auto}
+  .delprosjekter .thumbnail-grid{grid-template-columns:1fr;gap:5vw}
+  .delprosjekter .thumb-wrap{aspect-ratio:4/3}
+  .lb .p,.lb .n{display:none}
+  .lb .cap{font-size:.9rem}
+}
+
+
+/* ---------- new front page: top bar, large lead text, editorial project grid ---------- */
+.hd{position:sticky;top:0;z-index:1000;display:flex;justify-content:space-between;align-items:flex-start;gap:3vw;padding:1.4vw var(--m);background:var(--bg)}
+.hd .logo{position:static;width:clamp(120px,12.5vw,230px);flex:0 0 auto;margin:0;font-size:1.6vw}
+.hd-nav{display:flex;flex-wrap:wrap;justify-content:flex-end;align-items:baseline;gap:.2em 1.6vw;font-size:max(14px,1.1vw);font-weight:400;line-height:1.5;padding-top:.1em}
+.hd-nav a,.hd-nav button{background:none;border:0;padding:0;font:inherit;color:var(--fg);cursor:pointer;text-decoration:none}
+.hd-nav a:hover,.hd-nav button:hover{text-decoration:underline}
+.hd-nav a[aria-current="true"]{text-decoration:underline;text-underline-offset:.25em}
+.hd-nav .sep{width:1px;height:.9em;background:currentColor;opacity:.35;align-self:center}
+.lead{margin:9vw var(--m) 7vw}
+.lead .logo-tagline{font:400 clamp(26px,3.7vw,72px)/1.1 var(--serif);max-width:64vw;margin:0;letter-spacing:-.01em}
+.work{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:6vw 2vw;margin:0 var(--m) 6vw;align-items:start}
+.work .thumbnail-item{grid-column:span 6}
+.work .thumbnail-item.feat{grid-column:1/-1}
+.work .thumbnail-item.w7{grid-column:span 7}
+.work .thumbnail-item.w5{grid-column:span 5}
+.work .thumbnail-item.w5:nth-of-type(odd){margin-top:0}
+.work .thumb-wrap{aspect-ratio:4/3}
+.work .thumbnail-item.feat .thumb-wrap{aspect-ratio:2/1}
+.work .thumbnail-item.w5 .thumb-wrap{aspect-ratio:4/5}
+.work .thumbnail-info{display:flex;flex-wrap:wrap;align-items:baseline;gap:.15em .35em;margin-top:1.1vw}
+.work .thumbnail-title{flex:1 0 100%;margin-bottom:.1em!important;font:500 var(--fs-body)/1.2 var(--sans);margin:0}
+.work .thumb-meta{font-size:var(--fs-footer);font-weight:300;color:inherit}
+.work .thumb-meta:empty{display:none}
+.work .thumb-meta+.thumb-meta::before{content:"· ";opacity:.6}
+.work .grid-mood.wide{grid-column:1/-1;grid-row:auto;aspect-ratio:21/9}
+.work .thumbnail-item:hover .thumb-wrap .base{transform:none}
+.office-section{padding-top:5vw;scroll-margin-top:0}
+#kontakt{scroll-margin-top:8vw}
+@media (max-width:1050px){
+  .hd{gap:2vw}
+  .hd-nav{font-size:max(13px,1.6vw)}
+  .lead .logo-tagline{max-width:90vw}
+}
+@media (max-width:800px){
+  .hd{flex-direction:column;gap:3vw;padding:calc(env(safe-area-inset-top,0px) + 12px) var(--m) 10px}
+  .hd .logo{width:46vw;font-size:5vw}
+  .hd-nav{justify-content:flex-start;flex-wrap:nowrap;overflow-x:auto;white-space:nowrap;gap:0 5vw;width:100%;font-size:.95rem;scrollbar-width:none;padding-bottom:2px}
+  .hd-nav::-webkit-scrollbar{display:none}
+  .hd-nav .sep{display:none}
+  .lead{margin:12vw var(--m) 10vw}
+  .lead .logo-tagline{display:block;font-size:8.2vw;max-width:none}
+  .work{grid-template-columns:1fr;gap:9vw}
+  .work .thumbnail-item,.work .thumbnail-item.feat,.work .thumbnail-item.w7,.work .thumbnail-item.w5{grid-column:1/-1}
+  .work .thumb-wrap,.work .thumbnail-item.feat .thumb-wrap,.work .thumbnail-item.w5 .thumb-wrap{aspect-ratio:4/3}
+  .work .thumbnail-info{margin-top:2.5vw}
+  .work .thumbnail-title{font-size:1.1rem}
+  .work .thumb-meta{font-size:.9rem}
+  .work .grid-mood.wide{aspect-ratio:4/3}
+  .office-section{padding-top:12vw}
+}
+/* smaller project tiles: three per row on desktop, two on tablet/phone */
+.work{grid-template-columns:repeat(12,minmax(0,1fr));gap:4vw 2vw}
+.work .thumbnail-item,.work .thumbnail-item.feat,.work .thumbnail-item.w7,.work .thumbnail-item.w5{grid-column:span 4}
+.work .thumb-wrap,.work .thumbnail-item.feat .thumb-wrap,.work .thumbnail-item.w5 .thumb-wrap{aspect-ratio:4/3}
+.work .thumbnail-title{font-size:max(15px,1.25vw)}
+.work .thumb-meta{font-size:max(12px,.95vw)}
+.work .grid-mood.wide{grid-column:1/-1;aspect-ratio:21/6}
+@media (max-width:1050px){.work .thumbnail-item,.work .thumbnail-item.feat,.work .thumbnail-item.w7,.work .thumbnail-item.w5{grid-column:span 6}}
+@media (max-width:800px){.work{grid-template-columns:repeat(2,minmax(0,1fr));gap:6vw 3vw}.work .thumbnail-item,.work .thumbnail-item.feat,.work .thumbnail-item.w7,.work .thumbnail-item.w5{grid-column:auto}.work .thumbnail-title{font-size:.95rem}.work .thumb-meta{font-size:.8rem}.work .grid-mood.wide{grid-column:1/-1;aspect-ratio:16/9}}
+/* compact About/contact band: text in two columns, contact to the right */
+.office-section{margin-top:6vh;padding-top:3vw;padding-bottom:3vw}
+.office-section .three-column{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,22vw);gap:0 var(--gap);align-items:start}
+.office-section .left-column{grid-column:1/3;width:auto;column-count:2;column-gap:var(--gap)}
+.office-section .left-column>*{break-inside:avoid}
+.office-section .left-column>.hero-title,.office-section .left-column>.hero-title+h3,.office-section .left-column>h3:first-child{column-span:all}
+.office-section .office-text .hero-title{margin:0 0 .6em}
+.office-section .office-text h3{margin:0 0 .8rem}
+.office-section .office-text p{margin:0 0 .9rem}
+.office-section .right-column{grid-column:3;width:auto;margin-top:0}
+.office-section .office-center{grid-column:1/-1;grid-row:2;margin:1.5vw 0 0}
+.office-section .office-center:empty{display:none}
+.office-section .office-card img{max-height:26vh;margin:0 1vw .5vw 0}
+@media (max-width:800px){.office-section{margin-top:5vh;padding-top:8vw;padding-bottom:9rem}.office-section .three-column{display:flex;flex-direction:column}.office-section .left-column{column-count:1}.office-section .right-column{margin-top:1rem}.office-section .office-center{margin:0}}
+
+
+/* project facts + text directly under the info block */
+.prosjekt-tekst .fact span{color:var(--grey)}
+.prosjekt-tekst .fact span::after{content:":"}
+.prosjekt-tekst .prosjekt-beskrivelse{width:45vw;max-width:100%;margin:3vh 0 0;font:300 var(--fs-body)/1.35 var(--sans)}
+.prosjekt-tekst .prosjekt-beskrivelse p{margin:0 0 1em;font-size:inherit}
+.prosjekt-tekst .prosjekt-beskrivelse a{color:var(--link);display:inline}
+@media (max-width:1050px){.prosjekt-tekst .prosjekt-beskrivelse{width:100%}}
+
+/* ---------- editor (owner only) ---------- */
+.factrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) auto;gap:8px;align-items:center}
+.factrow input{font-size:15px;color:#000;background:#fff;border:1px solid #ccc;border-radius:6px;padding:8px 10px;width:100%}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chips button{background:none;border:1px solid #ccc;border-radius:999px;padding:3px 11px;font-size:13px;cursor:pointer}
+.chips button:hover{border-color:#000}
+.im .px{font-size:11px;color:#666}
+.im .px.low{color:var(--red);font-weight:600}
+.row.kid{margin-left:18px}
+.kidlist{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+[hidden]{display:none!important}
+.ed{position:fixed;inset:0;z-index:20000;background:#fff;color:#000;display:flex;flex-direction:column;font:14px/1.45 var(--sans)}
+.ed *{font-family:var(--sans)}
+.ed-bar{display:flex;align-items:center;gap:10px 16px;flex-wrap:wrap;padding:calc(env(safe-area-inset-top,0px) + 10px) 16px 10px;border-bottom:1px solid var(--line);background:#fafafa}
+.ed-bar h2{font-size:16px;font-weight:700;margin:0}
+.tabs{display:flex;gap:4px;flex-wrap:wrap}
+.tabs button{background:none;border:1px solid transparent;border-radius:999px;padding:5px 12px;font-size:14px}
+.tabs button[aria-selected="true"]{border-color:#000}
+.ed-status{color:#666;flex:1 1 180px;min-width:0}
+.ed-status.warn{color:#000}
+.ed-status.err{color:var(--red)}
+.ed-status.ok{color:#2f6b3a}
+.meter{display:flex;align-items:center;gap:8px;color:#666;font-size:12px}
+.meter i{display:block;width:80px;height:4px;background:var(--line);border-radius:2px;overflow:hidden}
+.meter b{display:block;height:100%;background:#000}
+.btn{border:1px solid #000;background:none;border-radius:999px;padding:7px 15px;font-weight:500;white-space:nowrap;font-size:14px}
+.btn.primary{background:#000;color:#fff}
+.btn.primary:disabled{opacity:.35;cursor:default}
+.btn.danger{border-color:var(--red);color:var(--red)}
+.btn.ghost{border-color:#ccc}
+.ed-body{flex:1;overflow:auto;padding-bottom:env(safe-area-inset-bottom,0px)}
+.ed-cols{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);min-height:100%}
+.ed-list{border-right:1px solid var(--line);padding:16px;display:flex;flex-direction:column;gap:6px}
+.row{display:grid;grid-template-columns:36px minmax(0,1fr) auto;gap:10px;align-items:center;padding:6px;border-radius:6px;cursor:pointer;border:1px solid transparent}
+.row:hover{background:#f2f2f2}
+.row[aria-current="true"]{border-color:#000}
+.row .th{width:36px;height:48px;background:var(--ph);overflow:hidden}
+.row .th img{width:100%;height:100%;object-fit:cover}
+.row .nm{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:500}
+.row .sub{color:#666;font-size:12px}
+.row .mv{display:flex;gap:2px}
+.row .mv button{background:none;border:0;padding:2px 5px;color:#777;font-size:14px}
+.row .mv button:hover{color:#000}
+.ed-form{padding:20px 16px 60px;max-width:880px;display:flex;flex-direction:column;gap:18px}
+.ed-form h3{font-size:15px;margin:14px 0 0;padding-top:14px;border-top:1px solid var(--line)}
+.f4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.f4 .s2{grid-column:span 2}
+.fld{display:flex;flex-direction:column;gap:5px;min-width:0}
+.fld label{font-size:12px;color:#555;font-weight:500}
+.fld input,.fld textarea{font-size:15px;color:#000;background:#fff;border:1px solid #ccc;border-radius:6px;padding:8px 10px;width:100%}
+.fld textarea{min-height:120px;resize:vertical;line-height:1.5}
+.fld input:focus,.fld textarea:focus{border-color:#000;outline:none}
+.hint{font-size:12px;color:#666}
+.checks{display:flex;gap:20px;flex-wrap:wrap}
+.checks label{display:flex;gap:7px;align-items:center;cursor:pointer}
+.drop{border:1px dashed #888;border-radius:8px;padding:18px;text-align:center;color:#555;cursor:pointer}
+.drop.over{border-color:#000;color:#000;background:#f2f2f2}
+.imgs{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.im{display:flex;flex-direction:column;gap:6px;min-width:0}
+.im .pv{aspect-ratio:3/4;background:var(--ph);position:relative;overflow:hidden}
+.im .pv img{width:100%;height:100%;object-fit:cover}
+.im .pv .cv{position:absolute;left:6px;top:6px;background:#000;color:#fff;font-size:10px;padding:1px 6px;border-radius:999px}
+.im input{font-size:12px;background:#fff;color:#000;border:1px solid #ccc;border-radius:5px;padding:5px 7px;width:100%}
+.im .acts{display:flex;gap:4px;flex-wrap:wrap}
+.im .acts button{background:none;border:1px solid #ccc;border-radius:5px;font-size:11px;padding:2px 7px}
+.im .acts button:hover{border-color:#000}
+.confirm{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:12px;border:1px solid var(--red);border-radius:8px}
+.newsrow{display:grid;grid-template-columns:150px minmax(0,1.4fr) minmax(0,1fr) auto;gap:8px;align-items:end;padding-block:10px;border-bottom:1px solid var(--line)}
+.busy{opacity:.6;pointer-events:none}
+.fld select,.strow select{font-size:14px;color:#000;background:#fff;border:1px solid #ccc;border-radius:6px;padding:7px 8px;width:100%}
+.strow{display:grid;grid-template-columns:minmax(0,1.3fr) repeat(5,minmax(0,1fr));gap:10px 14px;align-items:end;padding-block:14px;border-bottom:1px solid var(--line)}
+.strow .nm2{font-weight:600;align-self:center}
+.strow .nm2 small{display:block;font-weight:400;color:#666;font-size:12px}
+.cp{display:flex;gap:6px;align-items:center}
+.cp input[type=color]{width:42px;height:34px;padding:2px;border:1px solid #ccc;border-radius:6px;background:#fff;cursor:pointer;flex:0 0 auto}
+.cp button{background:none;border:0;padding:0;font-size:12px;color:#666;text-decoration:underline;cursor:pointer}
+.cp .def{font-size:12px;color:#888}
+.catrow{display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:10px;align-items:center;padding-block:8px;border-bottom:1px solid var(--line)}
+.catrow input{font-size:15px;border:1px solid #ccc;border-radius:6px;padding:8px 10px;width:100%}
+.catrow .cnt{color:#666;font-size:12px;white-space:nowrap}
+.catrow .mv button{background:none;border:0;padding:2px 6px;color:#777;font-size:14px;cursor:pointer}
+.catrow .confirm{grid-column:1/-1}
+.fpick{position:relative}
+.fp-btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:16px;color:#000;background:#fff;border:1px solid #ccc;border-radius:6px;padding:6px 10px;cursor:pointer;text-align:left;min-height:36px}
+.fp-btn:hover,.fp-btn[aria-expanded="true"]{border-color:#000}
+.fp-btn .car{font-family:var(--sans);font-size:11px;color:#666;flex:0 0 auto}
+.fp-btn .lbl{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.fp-list{position:absolute;z-index:5;left:0;top:calc(100% + 4px);width:max(100%,250px);max-height:340px;overflow-y:auto;background:#fff;border:1px solid #000;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,.18);padding:4px}
+.fp-list button{display:flex;justify-content:space-between;align-items:baseline;gap:12px;width:100%;background:none;border:0;border-radius:5px;padding:7px 10px;font-size:18px;color:#000;text-align:left;cursor:pointer}
+.fp-list button:hover,.fp-list button:focus-visible{background:#f0f0f0;outline:none}
+.fp-list button[aria-selected="true"]{background:#000;color:#fff}
+.fp-list button small{font-size:13px;opacity:.6;white-space:nowrap}
+.fp-list .grp{font-family:var(--sans);font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.06em;padding:8px 10px 2px}
+.pcats{display:flex;flex-wrap:wrap;gap:8px 18px}
+.pcats label{display:flex;gap:6px;align-items:center;cursor:pointer;white-space:nowrap}
+@media (max-width:800px){
+  .ed-cols{grid-template-columns:1fr}
+  .ed-list{border-right:0;border-bottom:1px solid var(--line);max-height:40vh;overflow:auto}
+  .f4{grid-template-columns:1fr 1fr}.f4 .s2{grid-column:1/-1}
+  .strow{grid-template-columns:1fr 1fr}.strow .nm2{grid-column:1/-1}
+  .newsrow{grid-template-columns:1fr 1fr}.newsrow .fld:nth-child(2),.newsrow .fld:nth-child(3){grid-column:1/-1}
+}
+</style>
+<div id="app"></div>
+<script type="application/json" id="site-data">{"example":false,"site":{"name":"Vemund L. Isum","logo":"VEMUND L. ISUM\nARKITEKTKONTOR","tagline":"Arkitektkontor på Tåsen for boliger, hytter, tilbygg og renovering. ","heroTitle":"Skreddersydde løsninger i naturmaterialer","officeLead":"Kontoret tegner boliger, leiligheter, renovering og hytter, med ambisjon om høy livskvalitet.","officeText":" Måten hjemmene våre er utformet, former hvordan vi lever livene våre. Derfor tegner jeg med spesiell omtanke på deres rutiner og ritualer; en innrammet utsikt til morgenkaffen, bevisst skyggespill som endres med solens gang, eller naturmaterialene vi tar på som bringer bevisstheten tilbake til nuet. \n\nEt slikt resultat krever tett dialog og samarbeid, slik at vi sammen kan skape arkitektur som passer akkurat deres liv, livet ut. \n\nProsessen blir delt opp i faser, fra mulighetsstudier, til skisseprosjekt og ferdig detaljering - slik at prosjektet deres skal få oppfølging og kvalitet i alle ledd. ","linkText":"","linkUrl":"","contactHeading":"Har du et prosjekt?","contactText":"Ta kontakt med Vemund Lindstad Isum.","email":"vemund@vemundisum.no","phone":"+47 94 98 81 82","instagram":"","officeImages":[],"moods":[],"updated":"2026-11-12","categories":["Hytte","Bolig","Leilighet","Skoleprosjekter","Møbler"],"style":{"office":{"bg":"#dce0cd","size":"50"},"logo":{"weight":"700","size":"50"},"pimg":{"size":"90"},"tagline":{"size":"50"},"temasider":{"size":"65"},"title":{"size":"50"},"meta":{"size":"50"},"grid":{"size":"80"}}},"projects":[{"id":"pmw52298114u6","nr":"100","title":"Alt som lever","place":"","year":"2026","category":"Skoleprosjekter","text":"","featured":false,"hidden":false,"images":[{"src":"78cdbb4749b2.webp","alt":"","w":1800,"h":952},{"src":"0242dc441d95.webp","asset":"18a78fb02ed582efedead83bd256bb80","alt":"","w":1168,"h":749},{"src":"85b6a8fe26d8.webp","asset":"dd5ff775f2ee416430ae23fbdff5ed06","alt":"","w":637,"h":899},{"src":"661abc648629.webp","asset":"e1392f34b0e12f3476f5e87f232e1ff0","alt":"","w":733,"h":743}]},{"id":"ex4","nr":"104","title":"Tittut","place":"Åros, Viken","year":"2024–25","category":"Hytte","text":"","featured":true,"hidden":false,"images":[{"src":"8b633e8e67ac.jpg","alt":"","w":567,"h":710},{"src":"fe5e322d1822.webp","alt":"","w":1152,"h":921},{"src":"bb2a69987a68.webp","alt":"","w":1585,"h":992},{"src":"997ff28385f3.webp","alt":"","w":749,"h":826},{"src":"749cb45b6abb.webp","alt":"","w":1494,"h":842},{"src":"bea0d9a27c74.webp","alt":"","w":1488,"h":939},{"src":"af8760498173.webp","alt":"","w":1500,"h":902},{"src":"6ebe61089c82.webp","alt":"","w":1443,"h":894},{"src":"c27d203ac8ad.webp","alt":"","w":1213,"h":926}]},{"id":"ex6","nr":"100.1","title":"Hus for bruk","place":"Diplom","year":"2025","category":"Skoleprosjekter","text":"","featured":true,"hidden":false,"images":[{"src":"84f7b409d63f.webp","alt":"Illustrasjon sprøyterom","w":1800,"h":1440},{"src":"7c3a1d2186ce.webp","alt":"Plan 1.etg","w":1800,"h":1273},{"src":"196bdf48fadd.webp","alt":"Plan 2.etg","w":1800,"h":1273},{"src":"787a4557b21a.webp","alt":"","w":1800,"h":1310},{"src":"84ceb14d3890.webp","alt":"","w":1800,"h":1273},{"src":"637a73e845b2.webp","alt":"","w":1800,"h":1273},{"src":"2dab87517157.webp","asset":"adea2a70c1cb32c5e50796fd9d1c0956","alt":"","w":744,"h":902},{"src":"815ac31013b4.webp","alt":"","w":1800,"h":1273},{"src":"097954ae7b6b.webp","alt":"","w":1800,"h":1273},{"src":"298e5de2e4b1.webp","alt":"","w":1337,"h":1493}],"parent":"pmw52298114u6"},{"id":"ex5","nr":"100.2","title":"Hus for Avrusning ","place":"Diplom","year":"2025","category":"Skoleprosjekter","text":"","featured":true,"hidden":false,"images":[{"src":"a84cf46b5073.jpg","alt":"","w":1440,"h":1800},{"src":"8e9d53743022.webp","alt":"","w":1800,"h":1273},{"src":"605505189691.webp","alt":"","w":1800,"h":1350},{"src":"209d65ca2a2c.webp","alt":"","w":1800,"h":1273},{"src":"6f2e1fc8530b.webp","alt":"","w":1800,"h":1273},{"src":"4b552594bb58.webp","alt":"","w":1800,"h":1273},{"src":"969b4ee928f0.webp","alt":"","w":1800,"h":1273},{"src":"71ecbd5623b3.webp","alt":"","w":1800,"h":1273},{"src":"8a1a24990dc0.webp","asset":"09ebd99290b1f9219d989a8e178770a3","alt":"","w":1336,"h":831},{"src":"9f077053c58a.webp","alt":"","w":1800,"h":1273},{"src":"cc23c768ff52.webp","alt":"","w":1800,"h":1273}],"parent":"pmw52298114u6"},{"id":"pmw522uqf7g7n","nr":"100.3","title":"Hus for overgang","place":"","year":"2026","category":"Skoleprosjekter","text":"","featured":false,"hidden":false,"images":[{"src":"169a844e1f26.webp","alt":"","w":1482,"h":1800},{"src":"7b93a6a9c54a.webp","asset":"7ac06697ed7a526033f8e86564d4fd72","alt":"","w":1339,"h":876},{"src":"b8682b290831.jpg","alt":"","w":1440,"h":1800},{"src":"cda4f2e85482.webp","asset":"75af2d6c96df135ee5cbde428b034d2f","alt":"","w":1341,"h":897},{"src":"a1db5ec17294.webp","asset":"d2a118010a71fc2e53be5c5313da9560","alt":"","w":1339,"h":897},{"src":"927131ad0b2a.webp","asset":"3bbe11b271d943ee233307f857c3d9ec","alt":"","w":497,"h":872},{"src":"3855c662c732.webp","asset":"0e659d0bca9fa6594d6c143c36e4d4ff","alt":"","w":1337,"h":873},{"src":"76d5df89b94d.webp","asset":"4ba0310455c03fe188c3a7c9e7a08332","alt":"","w":1335,"h":897},{"src":"0bcbb82d22c5.webp","asset":"0fea914a732b7ecf8463ab11f88d4a12","alt":"","w":647,"h":656},{"src":"3ca0f6ffd18c.webp","asset":"babfc17871d6c925a19dacfcedca2e00","alt":"","w":1320,"h":886}],"parent":"pmw52298114u6"},{"id":"pmw52cmuh5wri","nr":"106","title":"Villa Skøyen","place":"Skøyen, Oslo","year":"2026","category":"Bolig","text":"","featured":true,"hidden":false,"images":[{"src":"8e45f07c2855.jpg","alt":"","w":1800,"h":1556}],"facts":[{"l":"Areal (kvm)","v":"225 m²"},{"l":"Status","v":"Under planlegging"}]},{"id":"pmw0wvy0tvx1z","nr":"105","title":"Leilighet Majorstuen","place":"Majorstuen, Oslo","year":"2026","category":"Leilighet","text":"Ombygging av leilighet på Majorstuen.","featured":true,"hidden":false,"images":[{"src":"50f2bdad78be.webp","alt":"","w":1750,"h":1400},{"src":"cd5f2a8d7db9.webp","alt":"","w":1750,"h":1400}],"facts":[{"l":"Status","v":"Under planlegging"},{"l":"Areal (kvm)","v":"107 m2"}]}],"news":[]}</script>
+<script id="site-js">
+(function(){
+"use strict";
+var DATA_EL=document.getElementById("site-data");
+var ORIGINAL=DATA_EL.textContent;
+var state=JSON.parse(ORIGINAL);
+var app=document.getElementById("app");
+var canWrite=false, artifactNs=null, assetsNs=null, assetUse=null, dirty=false, openOv="", ci=0, autoTimer=0, swiped=false;
+var LIMIT=15*1024*1024;
+var REDUCED=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function br(s){return esc(s).replace(/\n/g,"<br>");}
+function logoHtml(){var t=state.site.logo||state.site.name||"";return String(t).split(/\n/).filter(function(l){return l.trim();}).map(function(l){return'<span class="logo-line">'+esc(l.trim())+'</span>';}).join("");}
+function paras(t){t=String(t||"").trim();if(!t)return"";return t.split(/\n\s*\n/).map(function(p){return"<p>"+br(p)+"</p>";}).join("");}
+function visible(){return state.projects.filter(function(p){return!p.hidden;});}
+function byId(id){for(var i=0;i<state.projects.length;i++)if(state.projects[i].id===id)return state.projects[i];return null;}
+function uid(pre){return pre+Date.now().toString(36)+Math.random().toString(36).slice(2,6);}
+function kwOwn(p){return String(p.category||"").split(/\s*[+,]\s*/).filter(Boolean);}
+function kw(p){var o=kwOwn(p);if(o.length||!p.id)return o;var low=[];state.projects.forEach(function(q){if(q.parent===p.id&&!q.hidden)kwOwn(q).forEach(function(k){if(low.indexOf(k)<0)low.push(k);});});return low;}
+function parentOf(p){return p.parent?byId(p.parent):null;}
+function isTop(p){var m=parentOf(p);return!m||m.hidden||!!m.parent;}
+function tops(){return visible().filter(isTop);}
+function kids(p){return state.projects.filter(function(q){return q.parent===p.id&&!q.hidden;});}
+function allKids(p){return state.projects.filter(function(q){return q.parent===p.id;});}
+function imgsOf(p){if(p.images&&p.images.length)return p.images;var out=[];kids(p).forEach(function(q){if(q.images&&q.images[0])out.push(q.images[0]);});return out;}
+function slug(s){return String(s).toLowerCase().replace(/æ/g,"ae").replace(/ø/g,"o").replace(/å/g,"a").normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"x";}
+function cats(){var s=(state.site.categories||[]).filter(Boolean).slice(),low=s.map(function(x){return x.toLowerCase();});if(s.length)return s;visible().forEach(function(p){kw(p).forEach(function(k){if(low.indexOf(k.toLowerCase())<0){s.push(k);low.push(k.toLowerCase());}});});return s;}
+function hasCat(p,c){c=c.toLowerCase();return kw(p).some(function(k){return k.toLowerCase()===c;});}
+function hasCatOwn(p,c){c=c.toLowerCase();return kwOwn(p).some(function(k){return k.toLowerCase()===c;});}
+function catBySlug(sl){var c=cats();for(var i=0;i<c.length;i++)if(slug(c[i])===sl)return c[i];return"";}
+function fmtDate(d){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d||"");return m?m[3]+"/"+m[2]+"/"+m[1]:esc(d);}
+function longDate(d){var m=/^(\d{4})-(\d{2})-(\d{2})$/.exec(d||"");if(!m)return"";var mn=["januar","februar","mars","april","mai","juni","juli","august","september","oktober","november","desember"];return(+m[3])+". "+mn[+m[2]-1]+" "+m[1];}
+function igUrl(v){return/^https?:/.test(v)?v:"https://www.instagram.com/"+String(v).replace(/^@/,"");}
+function parseHash(){var h=location.hash.replace(/^#/,""),m;
+  if(h==="arkiv"||h==="nyheter")return{view:"home",ov:h};
+  if((m=/^prosjekt-([A-Za-z0-9_-]+)$/.exec(h)))return{view:"project",id:m[1]};
+  if((m=/^kategori-([a-z0-9-]+)$/.exec(h)))return{view:"home",cat:catBySlug(m[1])};
+  return{view:"home",anchor:h};}
+
+/* placeholder drawing for projects without images */
+function ph(p){
+  var n=parseInt(String(p.nr).replace(/\D/g,""),10)||7, r=function(k){return((n*9301+k*49297)%233280)/233280;};
+  var w=150+Math.round(r(1)*90),h=90+Math.round(r(2)*60),x=150-w/2,g=300,t=g-h,roof=Math.floor(r(3)*3),pk=t-30-Math.round(r(4)*45);
+  var s='<svg viewBox="0 0 300 400" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="1.2">';
+  s+='<line x1="10" y1="'+g+'" x2="290" y2="'+g+'"/><rect x="'+x+'" y="'+t+'" width="'+w+'" height="'+h+'"/>';
+  if(roof===0)s+='<polyline points="'+(x-8)+','+(t+4)+' 150,'+pk+' '+(x+w+8)+','+(t+4)+'"/>';
+  else if(roof===1)s+='<polyline points="'+(x-6)+','+t+' '+(x-6)+','+(pk+20)+' '+(x+w+6)+','+(t-6)+'"/>';
+  else s+='<line x1="'+(x-6)+'" y1="'+(t-4)+'" x2="'+(x+w+6)+'" y2="'+(t-4)+'"/>';
+  var cols=2+Math.floor(r(5)*2),ww=16,gap=(w-cols*ww)/(cols+1);
+  for(var i=0;i<cols;i++){var wx=x+gap+i*(ww+gap);s+='<rect x="'+wx.toFixed(1)+'" y="'+(t+18)+'" width="'+ww+'" height="'+Math.round(h*.35)+'"/>';}
+  s+='<rect x="'+(x+w*.62).toFixed(1)+'" y="'+(g-38)+'" width="18" height="38"/>';
+  return'<div class="ph">'+s+'</g></svg></div>';
+}
+
+/* ---------- shared pieces ---------- */
+function temasider(active){
+  var c=cats(), h='<nav class="temasider" aria-label="Temasider">';
+  if(active)h+='<a href="#top">→Alle</a>';
+  h+=c.map(function(k){return'<a href="#kategori-'+slug(k)+'"'+(active===k?' aria-current="true"':'')+'>→'+esc(k)+'</a>';}).join("");
+  return h+'<a href="#kontor">→Om</a></nav>'+(state.example?'<p class="banner">Eksempelinnhold. Eieren av siden bytter det ut med egne prosjekter.</p>':'');
+}
+function footer(){
+  var s=state.site;
+  return'<footer class="bottom-border"><div class="contacts">'+(s.instagram?'<a href="'+esc(igUrl(s.instagram))+'">Instagram</a>':'')+(s.email?'<span>'+esc(s.email)+'</span>':'')+(s.phone?'<span>'+esc(s.phone)+'</span>':'')+'</div><div class="copy"><span>© '+new Date().getFullYear()+' - '+esc(s.name)+'</span></div></footer>';
+}
+function thumb(p){
+  var im2=imgsOf(p), a=im2[0], b=im2[1], img, nk=kids(p).length;
+  if(!a)img=ph(p);
+  else if(b)img='<img class="base" src="'+a.src+'" alt="'+esc(a.alt||p.title)+'" loading="lazy" decoding="async"><img class="hov" src="'+b.src+'" alt="" loading="lazy" decoding="async">';
+  else img='<img class="only" src="'+a.src+'" alt="'+esc(a.alt||p.title)+'" loading="lazy" decoding="async">';
+  return'<a class="thumbnail-item" href="#prosjekt-'+p.id+'"><div class="thumb-wrap">'+img+'</div><div class="thumbnail-info"><h3 class="thumbnail-title">'+esc(p.nr)+' '+esc(p.title)+'</h3><p class="thumb-meta">'+esc(p.place)+'</p><p class="thumb-meta">'+esc(p.year)+'</p><p class="thumb-meta">'+esc(kw(p).join(" + "))+'</p>'+(nk?'<p class="thumb-meta">'+nk+' delprosjekt'+(nk===1?'':'er')+'</p>':'')+'</div></a>';
+}
+function grid(list,withMoods){
+  if(!list.length)return'<p class="empty">Ingen prosjekter ennå.'+(canWrite?' Trykk «Rediger» for å legge til det første.':'')+'</p>';
+  var moods=withMoods?(state.site.moods||[]):[], at=[1,6,10,15,19,24,28,33], out=[], mi=0;
+  list.forEach(function(p,i){if(mi<moods.length&&at[mi]===i){var m=moods[mi++];out.push('<div class="grid-mood"><img src="'+m.src+'" alt="'+esc(m.alt||"")+'" loading="lazy" decoding="async"></div>');}out.push(thumb(p));});
+  while(mi<moods.length&&mi<2&&list.length<=at[mi]){var m2=moods[mi++];out.push('<div class="grid-mood"><img src="'+m2.src+'" alt="'+esc(m2.alt||"")+'" loading="lazy" decoding="async"></div>');}
+  return'<div class="thumbnail-grid">'+out.join("")+'</div>';
+}
+
+/* ---------- home ---------- */
+function workGrid(list,withMoods){
+  if(!list.length)return'<p class="empty">Ingen prosjekter ennå.'+(canWrite?' Trykk «Rediger» for å legge til det første.':'')+'</p>';
+  var ord=list.filter(function(p){return p.featured;}).concat(list.filter(function(p){return!p.featured;})), feat=[], rest=ord, moods=withMoods?(state.site.moods||[]):[], out=[], mi=0;
+  feat.forEach(function(p){out.push(thumb(p).replace('class="thumbnail-item"','class="thumbnail-item feat"'));});
+  rest.forEach(function(p,i){
+    out.push(thumb(p).replace('class="thumbnail-item"','class="thumbnail-item '+(["w7","w5","w5","w7"][i%4])+'"'));
+    if((i+1)%4===0&&mi<moods.length){var m=moods[mi++];out.push('<div class="grid-mood wide"><img src="'+m.src+'" alt="'+esc(m.alt||"")+'" loading="lazy" decoding="async"></div>');}
+  });
+  return'<div class="work">'+out.join("")+'</div>';
+}
+function home(r){
+  var s=state.site, cat=r.cat||"", tp=tops();
+  var list=cat?tp.filter(function(p){return hasCat(p,cat);}):tp, c=cats();
+  var h='<main id="top"><header class="hd"><div class="logo"><a href="#top" aria-label="'+esc(s.name)+'">'+logoHtml()+'</a></div><nav class="hd-nav" aria-label="Meny">'+
+    '<a href="#top"'+(!cat?' aria-current="true"':'')+'>Alle</a>'+c.map(function(k){return'<a href="#kategori-'+slug(k)+'"'+(cat===k?' aria-current="true"':'')+'>'+esc(k)+'</a>';}).join("")+
+    '<span class="sep" aria-hidden="true"></span><a href="#kontor">Om</a><button type="button" data-open="arkiv">Arkiv</button><button type="button" data-open="nyheter">Nyheter</button><a href="#kontakt">Kontakt</a></nav></header>'+
+    (state.example?'<p class="banner">Eksempelinnhold. Eieren av siden bytter det ut med egne prosjekter.</p>':'')+'<h1 class="sr">'+esc(s.name)+'</h1>';
+  if(cat)h+='<div class="lead"><p class="logo-tagline">'+esc(cat)+'</p></div>';
+  else if(s.tagline)h+='<div class="lead"><p class="logo-tagline">'+esc(s.tagline.trim())+'</p></div>';
+  h+='<section id="prosjekter" aria-label="'+(cat?esc(cat):"Prosjekter")+'">'+workGrid(list,!cat)+'</section>';
+  h+='<section class="office-section" id="kontor" aria-labelledby="kontor-h"><h2 class="sr" id="kontor-h">Kontor</h2><div class="three-column"><div class="left-column office-text">'+
+    (s.heroTitle?'<h3 class="hero-title">'+esc(s.heroTitle)+'</h3>':'')+(s.officeLead?'<h3>'+esc(s.officeLead)+'</h3>':'')+paras(s.officeText)+
+    (s.linkText&&s.linkUrl?'<a href="'+esc(s.linkUrl)+'">→ <i>'+esc(s.linkText)+'</i></a>':'')+'</div>';
+  var oi=s.officeImages||[];
+  h+='<div class="office-center">'+(oi.length?'<div class="office-image">'+oi.map(function(im){var inner='<img src="'+im.src+'" alt="'+esc(im.alt||im.caption||"")+'" loading="lazy" decoding="async">'+(im.caption?'<p>'+esc(im.caption)+'</p>':'');
+      return'<div class="office-card">'+(im.link?'<a href="'+esc(im.link)+'">'+inner+'</a>':inner)+'</div>';}).join("")+'</div>':'')+'</div>';
+  h+='<div class="right-column office-text" id="kontakt">'+(s.contactHeading?'<p><b>'+esc(s.contactHeading)+'</b></p>':'')+(s.contactText?'<p>'+esc(s.contactText)+'</p>':'')+
+    (s.email?'<p><a href="mailto:'+esc(s.email)+'">'+esc(s.email)+'</a></p>':'')+(s.phone?'<p><a href="tel:'+esc(s.phone.replace(/[^\d+]/g,""))+'">Ring '+esc(s.phone.replace(/^\+47\s*/,""))+'</a></p>':'')+'</div></div></section></main>';
+  return h+footer();
+}
+
+/* ---------- project page ---------- */
+function projectPage(p){
+  var own=p.images||[], cover=imgsOf(p)[0], k=kw(p), par=parentOf(p), kd=kids(p);
+  var h='<main><div class="container"><header class="three-column prosjektside"><div class="left-column"><div class="logo"><a href="#top" aria-label="'+esc(state.site.name)+'">'+logoHtml()+'</a></div></div>'+
+    '<div class="center-col"><div class="prosjekt-cover">'+(cover?zimg(cover,p.title):ph(p))+'</div>'+
+    '<div class="prosjekt-tekst"><h1>'+esc(p.nr)+' '+esc(p.title)+'</h1><p>'+esc(p.place)+'</p><p>'+esc(p.year)+'</p><p>'+esc(k.join(" + "))+'</p>'+factsHtml(p)+
+    (par?'<p class="overordnet"><a href="#prosjekt-'+par.id+'">↑ Del av «'+esc(par.title)+'»</a></p>':'')+(p.text?'<div class="office-text prosjekt-beskrivelse">'+paras(p.text)+'</div>':'')+'</div></div><div class="right-col"></div></header>';
+  if(kd.length)h+='<section class="delprosjekter" aria-label="Delprosjekter"><h2>Delprosjekter</h2><div class="thumbnail-grid">'+kd.map(thumb).join("")+'</div></section>';
+  h+='<section class="galleri" aria-label="Galleri">'+own.slice(1).map(function(im,i){var n=i+1;return'<div class="bilde">'+zimg(im,p.title,1)+'<h4>'+(n<10?"0"+n:n)+'.</h4>'+(im.alt?'<p>'+esc(im.alt)+'</p>':'')+'</div>';}).join("")+'</section>';
+  var others=tops().filter(function(q){return q!==p&&q!==par;}), sib=par?kids(par).filter(function(q){return q!==p;}):[],
+      rel=sib.concat(others.filter(function(q){return kw(q).some(function(x){return k.indexOf(x)>=0;});}));
+  rel=rel.concat(others.filter(function(q){return rel.indexOf(q)<0;})).slice(0,10);
+  h+=rel.length?'<section class="related" aria-label="Flere prosjekter">'+grid(rel,false)+'</section>':'';
+  h+='</div></main>'+(par?'<a class="rail left back" href="#prosjekt-'+par.id+'">↩︎Tilbake til «'+esc(par.title)+'»</a>':'<a class="rail left back" href="#top">↩︎Tilbake til forside</a>')+(k.length?'<div class="rail right pillar">Se mer: '+k.map(function(x){return'<a href="#kategori-'+slug(x)+'">→ '+esc(x)+'</a>';}).join(" ")+'</div>':'');
+  return h+footer();
+}
+function factsHtml(p){return(p.facts||[]).filter(function(f){return f&&(f.l||f.v);}).map(function(f){return'<p class="fact">'+(f.l?'<span>'+esc(f.l)+'</span> ':'')+esc(f.v)+'</p>';}).join("");}
+function zimg(im,title,lazy){return'<img src="'+im.src+'" alt="'+esc(im.alt||title)+'" data-zoom data-cap="'+esc(im.alt||"")+'" tabindex="0" role="button" aria-label="Forstørr bildet: '+esc(im.alt||title)+'" decoding="async"'+(lazy?' loading="lazy"':'')+(im.w?' width="'+im.w+'" height="'+im.h+'"':'')+'>';}
+
+/* ---------- overlays ---------- */
+function overlay(kind){
+  var h='<div class="overlay-backdrop" data-close></div><div class="overlay'+(kind==="nyheter"?" right":"")+'" role="dialog" aria-modal="true" aria-label="'+(kind==="arkiv"?"Arkiv":"Nyheter")+'"><div class="overlay-content"><button class="overlay-close" type="button" data-close aria-label="Lukk">×</button>';
+  if(kind==="arkiv"){
+    var rows=[];tops().sort(function(a,b){return(parseFloat(b.nr)||0)-(parseFloat(a.nr)||0);}).forEach(function(p){rows.push(p);kids(p).sort(function(a,b){return String(a.nr).localeCompare(String(b.nr),undefined,{numeric:true});}).forEach(function(q){rows.push(q);});});
+    h+='<table class="archive-table"><tbody>'+rows.map(function(p){var hasPage=true;return'<tr><td><a href="#prosjekt-'+p.id+'">'+(p.parent&&parentOf(p)?'↳ ':'')+esc(p.nr)+' '+esc(p.title)+'</a></td><td>'+kw(p).map(function(k){return'<a href="#kategori-'+slug(k)+'">'+esc(k)+'</a>';}).join(" / ")+'</td><td><a href="#prosjekt-'+p.id+'">'+esc(p.place)+'</a></td><td><a href="#prosjekt-'+p.id+'">'+esc(p.year)+'</a></td></tr>';}).join("")+'</tbody></table>';
+  }else{
+    var n=(state.news||[]).slice().sort(function(a,b){return String(b.date).localeCompare(String(a.date));});
+    h+='<table class="archive-table nyheter-table"><tbody>'+n.map(function(x){return'<tr><td>'+fmtDate(x.date)+'</td><td>'+(x.link?'<a href="'+esc(x.link)+'">'+esc(x.text)+'</a>':esc(x.text))+'</td></tr>';}).join("")+'</tbody></table>'+
+      (state.site.updated?'<p class="updated">Sist oppdatert '+longDate(state.site.updated)+'</p>':'');
+  }
+  return h+'</div></div>';
+}
+
+/* ---------- zoom (lightbox): click, wheel, drag, pinch ---------- */
+var lb=null;
+function lbOpen(items,i){
+  lbClose(true);
+  var el=document.createElement("div");el.className="lb";el.tabIndex=-1;el.setAttribute("role","dialog");el.setAttribute("aria-modal","true");el.setAttribute("aria-label","Forstørret bilde");
+  el.innerHTML='<img alt="" draggable="false"><button class="x" type="button" data-lb="x" aria-label="Lukk">×</button>'+(items.length>1?'<button class="p" type="button" data-lb="p" aria-label="Forrige bilde">←</button><button class="n" type="button" data-lb="n" aria-label="Neste bilde">→</button>':'')+
+    '<div class="zhint">Rull for å zoome · dra for å flytte · Esc for å lukke</div><div class="cap"><span class="c1"></span><span class="c2"></span></div>';
+  document.body.appendChild(el);document.body.style.overflow="hidden";
+  lb={el:el,img:el.querySelector("img"),items:items,i:i,s:1,fit:1,max:4,x:0,y:0,nw:0,nh:0,ptr:{},n:0,moved:false,multi:false,down:null,opener:document.activeElement};
+  el.addEventListener("wheel",lbWheel,{passive:false});
+  el.addEventListener("pointerdown",lbDown);el.addEventListener("pointermove",lbMove);el.addEventListener("pointerup",lbUp);el.addEventListener("pointercancel",lbUp);
+  el.addEventListener("click",function(e){var b=e.target.closest("[data-lb]");if(!b)return;var a=b.dataset.lb;if(a==="x")lbClose();else lbShow(lb.i+(a==="n"?1:-1));});
+  document.addEventListener("keydown",lbKey);window.addEventListener("resize",lbFit);
+  lbShow(i);el.focus();
+}
+function lbClose(silent){
+  if(!lb)return;var o=lb.opener;lb.el.remove();lb=null;document.body.style.overflow=editorOpen?"hidden":"";
+  document.removeEventListener("keydown",lbKey);window.removeEventListener("resize",lbFit);
+  if(!silent&&o&&o.focus&&document.contains(o))o.focus();
+}
+function lbShow(i){
+  var n=lb.items.length;lb.i=(i+n)%n;var it=lb.items[lb.i],img=lb.img;
+  img.style.visibility="hidden";
+  img.onload=function(){if(!lb)return;lb.nw=img.naturalWidth;lb.nh=img.naturalHeight;img.style.width=lb.nw+"px";img.style.height=lb.nh+"px";lbFit();img.style.visibility="";};
+  img.src=it.src;
+  lb.el.querySelector(".c1").textContent=it.alt||"";lb.el.querySelector(".c1").style.display=it.alt?"":"none";
+  lb.el.querySelector(".c2").textContent=n>1?(lb.i+1)+" / "+n:"";
+}
+function lbFit(){
+  if(!lb||!lb.nw)return;var W=lb.el.clientWidth,H=lb.el.clientHeight;
+  lb.fit=Math.min((W-32)/lb.nw,(H-96)/lb.nh);lb.max=Math.max(lb.fit*6,2);lb.s=lb.fit;lb.x=0;lb.y=0;lbApply();
+}
+function lbApply(){
+  var W=lb.el.clientWidth,H=lb.el.clientHeight,w=lb.nw*lb.s,h=lb.nh*lb.s;
+  lb.x=w<=W?(W-w)/2:Math.min(0,Math.max(W-w,lb.x));
+  lb.y=h<=H?(H-h)/2:Math.min(0,Math.max(H-h,lb.y));
+  lb.img.style.transform="translate("+lb.x+"px,"+lb.y+"px) scale("+lb.s+")";
+}
+function lbZoomAt(ns,cx,cy){ns=Math.max(lb.fit,Math.min(lb.max,ns));var r=ns/lb.s;lb.x=cx-(cx-lb.x)*r;lb.y=cy-(cy-lb.y)*r;lb.s=ns;lbApply();}
+function lbWheel(e){e.preventDefault();if(!lb||!lb.nw)return;var d=e.deltaY*(e.deltaMode===1?33:e.deltaMode===2?400:1);lbZoomAt(lb.s*Math.exp(-d*0.0018),e.clientX,e.clientY);}
+function lbDist(){var k=Object.keys(lb.ptr),a=lb.ptr[k[0]],b=lb.ptr[k[1]];return{d:Math.hypot(a.x-b.x,a.y-b.y)||1,x:(a.x+b.x)/2,y:(a.y+b.y)/2};}
+function lbDown(e){
+  if(!lb||e.target.closest("button"))return;
+  if(!Object.keys(lb.ptr).length){lb.moved=false;lb.multi=false;lb.down=e.target;}
+  lb.ptr[e.pointerId]={x:e.clientX,y:e.clientY,x0:e.clientX,y0:e.clientY};
+  try{lb.el.setPointerCapture(e.pointerId);}catch(x){}
+  if(Object.keys(lb.ptr).length===2){lb.multi=true;var m=lbDist();lb.pd=m.d;lb.pm={x:m.x,y:m.y};}
+}
+function lbMove(e){
+  if(!lb||!lb.ptr[e.pointerId])return;var p=lb.ptr[e.pointerId],dx=e.clientX-p.x,dy=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;
+  if(Object.keys(lb.ptr).length>=2){var m=lbDist();lb.x+=m.x-lb.pm.x;lb.y+=m.y-lb.pm.y;lbZoomAt(lb.s*m.d/lb.pd,m.x,m.y);lb.pd=m.d;lb.pm={x:m.x,y:m.y};lb.moved=true;return;}
+  if(Math.hypot(e.clientX-p.x0,e.clientY-p.y0)>5){lb.moved=true;lb.el.classList.add("drag");}
+  if(lb.moved){lb.x+=dx;lb.y+=dy;lbApply();}
+}
+function lbUp(e){
+  if(!lb||!lb.ptr[e.pointerId])return;var p=lb.ptr[e.pointerId];delete lb.ptr[e.pointerId];lb.el.classList.remove("drag");
+  if(Object.keys(lb.ptr).length)return;
+  if(lb.moved||lb.multi||e.type==="pointercancel")return;
+  if(lb.down===lb.img){ if(lb.s>lb.fit*1.05)lbZoomAt(lb.fit,p.x,p.y); else lbZoomAt(Math.max(lb.fit*2.5,1),p.x,p.y); }
+  else if(lb.down===lb.el)lbClose();
+}
+function lbKey(e){
+  if(!lb)return;var W=lb.el.clientWidth/2,H=lb.el.clientHeight/2;
+  if(e.key==="Escape"){e.preventDefault();lbClose();}
+  else if(e.key==="ArrowLeft"){e.preventDefault();lbShow(lb.i-1);}
+  else if(e.key==="ArrowRight"){e.preventDefault();lbShow(lb.i+1);}
+  else if(e.key==="+"||e.key==="="){e.preventDefault();lbZoomAt(lb.s*1.4,W,H);}
+  else if(e.key==="-"||e.key==="_"){e.preventDefault();lbZoomAt(lb.s/1.4,W,H);}
+  else if(e.key==="0"){e.preventDefault();lbFit();}
+  else if(e.key==="Tab"){e.preventDefault();var bs=Array.prototype.slice.call(lb.el.querySelectorAll("button")),ix=bs.indexOf(document.activeElement)+(e.shiftKey?-1:1);if(bs.length)bs[(ix+bs.length)%bs.length].focus();}
+}
+function zoomOpen(im){var all=Array.prototype.slice.call(app.querySelectorAll("img[data-zoom]"));
+  lbOpen(all.map(function(x){return{src:x.currentSrc||x.src,alt:x.dataset.cap||""};}),Math.max(0,all.indexOf(im)));}
+app.addEventListener("click",function(e){var im=e.target.closest&&e.target.closest("img[data-zoom]");if(im){e.preventDefault();zoomOpen(im);}});
+app.addEventListener("keydown",function(e){if((e.key==="Enter"||e.key===" ")&&e.target.matches&&e.target.matches("img[data-zoom]")){e.preventDefault();zoomOpen(e.target);}});
+window.addEventListener("hashchange",function(){lbClose(true);});
+
+/* ---------- render + routing ---------- */
+function render(keepScroll){
+  var r=parseHash(), y=window.scrollY, p=r.view==="project"?byId(r.id):null;
+  document.title=state.example?"Prosjektportefølje":state.site.name;
+  var html=(p&&(!p.hidden||canWrite))?projectPage(p):home(r);
+  if(openOv)html+=overlay(openOv);
+  if(canWrite&&!editorOpen)html+='<button class="edit-pill" type="button" id="editbtn">'+(dirty?'<span class="dot"></span>':'')+'Rediger</button>';
+  app.innerHTML=html;
+  applyStyle();
+  fitLogo();
+  if(keepScroll)window.scrollTo(0,y);
+  startAuto();
+}
+function route(){
+  var r=parseHash();
+  if(r.ov){openOv=r.ov;render(true);return;}
+  openOv="";render(false);
+  if(r.view==="project")window.scrollTo(0,0);
+  else if(r.cat!==undefined){var g=document.getElementById("prosjekter");if(g)window.scrollTo(0,Math.max(0,g.getBoundingClientRect().top+window.scrollY-60));}
+  else if(r.anchor&&r.anchor!=="top"){var el=document.getElementById(r.anchor);if(el)el.scrollIntoView();}
+  else window.scrollTo(0,0);
+}
+window.addEventListener("hashchange",route);
+
+/* ---------- user-chosen fonts and colours ---------- */
+var FONT_LIST=[
+ ["Hanken Grotesk","sans-serif",""],["Inter","sans-serif","wght@100..900"],["Work Sans","sans-serif","wght@100..900"],["DM Sans","sans-serif","wght@100..900"],
+ ["Space Grotesk","sans-serif","wght@300..700"],["IBM Plex Sans","sans-serif","wght@300;400;500;600;700"],["Archivo","sans-serif","wght@100..900"],["Manrope","sans-serif","wght@200..800"],
+ ["EB Garamond","serif",""],["Cormorant Garamond","serif","ital,wght@0,300..700;1,300..700"],["Libre Baskerville","serif","wght@400;700"],["Playfair Display","serif","ital,wght@0,400..900;1,400..900"],["Fraunces","serif","wght@100..900"],
+ ["IBM Plex Mono","monospace","wght@300;400;500;600;700"],["Space Mono","monospace","wght@400;700"]];
+var WEIGHTS=[["","Standard"],["300","Lett"],["400","Normal"],["500","Medium"],["600","Halvfet"],["700","Fet"]];
+/* each entry: key, label, short help, selectors, which controls, default colour, default background */
+var STYLE_EL=[
+ ["page","Siden","Bakgrunn og standard tekstfarge",null,"color bg","#000000","#ffffff"],
+ ["gridcols","Prosjektrutenettet","Hvor mange prosjekter som står ved siden av hverandre (datamaskin)",".work","cols"],
+ ["pimg","Bilder på prosjektsidene","Hvor store bildene er på prosjektsidene",".prosjekt-cover img","size"],
+ ["logo","Logo","Øverst til venstre",".logo,.logo a","font weight color size","#000000"],
+ ["tagline","Stor innledningstekst","Teksten under menyen på forsiden",".logo-tagline","font weight color size","#000000"],
+ ["temasider","Menyen øverst","Kategorier, Om, Arkiv, Nyheter og Kontakt",".temasider a,.hd-nav a,.hd-nav button","font weight color size","#000000"],
+ ["title","Prosjekttitler","Karusellen og prosjektsidene",".project-title,.prosjekt-tekst h1,.bilde h4","font weight color size","#000000"],
+ ["meta","Prosjektinfo","År, sted og kategori",".project-meta,.prosjekt-tekst p,.carousel-number,.bilde p","font weight color size","#000000"],
+ ["grid","Tekst i rutenettet","Under bildene",".thumbnail-title,.thumb-meta","font color size","#000000"],
+ ["rails","Arkiv og Nyheter","Knappene i kantene",".rail,.rail a","font weight color size","#000000"],
+ ["office","Kontorfeltet","Feltet nederst på forsiden",".office-section,.office-section .office-text,.office-section a,.office-card p","font color bg size","#000000","#e8e8e6",".office-section .office-text"],
+ ["ptext","Prosjekttekst","Teksten på prosjektsidene",".galleri .office-text","font weight color size","#000000"],
+ ["overlay","Arkiv- og nyhetspanelene","",".overlay-content,.archive-table td","font color bg","#333333","#ffffff"],
+ ["links","Lenker","I arkivet og prosjekttekster",".archive-table td a,.galleri .office-text a","color","#0000ee"],
+ ["hoverA","Markering i arkivet","Når musen er over en rad",".archive-table tr:hover","bg",null,"#6a81d7"],
+ ["hoverN","Markering i nyheter","Når musen er over en rad",".nyheter-table tr:hover","bg",null,"#f3cd25"],
+ ["footer","Bunnlinjen","Kontaktlinjen nederst",".bottom-border,.bottom-border a,.bottom-border span","font weight color bg size","#000000","#ffffff"]];
+var previewLoaded=false;
+function loadPreviewFonts(){if(previewLoaded)return;previewLoaded=true;
+  var fam=FONT_LIST.filter(function(f){return f[2];}).map(function(f){return"family="+f[0].replace(/ /g,"+");}).join("&");
+  var l=document.createElement("link");l.rel="stylesheet";l.href="https://fonts.googleapis.com/css2?"+fam+"&display=swap";document.head.appendChild(l);}
+var GROUPS={"sans-serif":"Uten seriffer","serif":"Med seriffer","monospace":"Skrivemaskin"};
+function fontPicker(k,v){
+  var cur=v?'<span class="lbl" style="font-family:'+esc(fontStack(v))+'">'+esc(v)+'</span>':'<span class="lbl" style="font-family:var(--sans)">Standard</span>',last="";
+  var opts='<button type="button" role="option" data-fpick="'+k+'" data-val="" aria-selected="'+(!v)+'" style="font-family:var(--sans)">Standard<small>som før</small></button>'+
+    FONT_LIST.map(function(f){var g="";if(f[1]!==last){last=f[1];g='<div class="grp">'+GROUPS[f[1]]+'</div>';}
+      return g+'<button type="button" role="option" data-fpick="'+k+'" data-val="'+esc(f[0])+'" aria-selected="'+(v===f[0])+'" style="font-family:'+esc(fontStack(f[0]))+'">'+esc(f[0])+'<small>Aa Øø 123</small></button>';}).join("");
+  return'<div class="fld"><label for="st-'+k+'-font">Font</label><div class="fpick"><button type="button" class="fp-btn" id="st-'+k+'-font" data-fopen="'+k+'" aria-haspopup="listbox" aria-expanded="false">'+cur+'<span class="car">▾</span></button>'+
+    '<div class="fp-list" role="listbox" aria-label="Velg font" hidden>'+opts+'</div></div></div>';}
+function closePickers(except){Array.prototype.forEach.call(ed.querySelectorAll(".fp-list"),function(l){if(l!==except){l.hidden=true;var b=l.parentNode.querySelector(".fp-btn");if(b)b.setAttribute("aria-expanded","false");}});}
+function fontInfo(n){for(var i=0;i<FONT_LIST.length;i++)if(FONT_LIST[i][0]===n)return FONT_LIST[i];return null;}
+function fontStack(n){var f=fontInfo(n);return'"'+n+'",'+(f?f[1]:"sans-serif");}
+function sty(){state.site.style=state.site.style||{};return state.site.style;}
+function ensureFonts(){var st=sty(),need={};Object.keys(st).forEach(function(k){var f=st[k]&&st[k].font;if(f)need[f]=1;});
+  Object.keys(need).forEach(function(n){var f=fontInfo(n);if(!f||!f[2]||document.querySelector('link[data-font="'+n+'"]'))return;
+    var l=document.createElement("link");l.rel="stylesheet";l.setAttribute("data-font",n);l.href="https://fonts.googleapis.com/css2?family="+n.replace(/ /g,"+")+":"+f[2]+"&display=swap";
+    l.onload=function(){if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitLogo);else fitLogo();};document.head.appendChild(l);});}
+var styleEl=document.createElement("style");styleEl.id="user-style";document.head.appendChild(styleEl);
+function applyStyle(){
+  var st=sty(),css="";
+  STYLE_EL.forEach(function(d){var v=st[d[0]];if(!v)return;
+    if(d[0]==="page"){if(v.bg)css+=":root{--bg:"+v.bg+"}";if(v.color)css+=":root{--fg:"+v.color+"}";return;}
+    var sels=d[3].split(","),pre=sels.map(function(x){return"html body "+x;}).join(","),imp=d[0]==="links"?"":"!important",dec="";
+    if(v.font)dec+="font-family:"+fontStack(v.font)+imp+";";
+    if(v.weight)dec+="font-weight:"+v.weight+imp+";";
+    if(v.color)dec+="color:"+v.color+imp+";";
+    if(dec)css+=pre+"{"+dec+"}";
+    var K=(+v.size||100)/100;
+    if(K!==1){
+      if(d[0]==="logo")css+="html body .hd .logo{width:calc(clamp(120px,12.5vw,230px)*"+K+")!important}@media (max-width:800px){html body .hd .logo{width:calc(46vw*"+K+")!important}}";
+      else if(d[0]==="footer")css+="html body .bottom-border{font-size:calc(var(--fs-footer)*"+K+")!important}";
+      else if(d[0]==="rails")css+="html body .rail{font-size:calc(var(--fs-body)*"+K+")!important}";
+      else if(d[0]==="pimg")css+="html body .prosjekt-cover img,html body .bilde img{max-width:calc(70vw*"+K+")!important}@media (max-width:800px){html body .prosjekt-cover img,html body .bilde img{max-width:"+(K*100)+"%!important}}";
+      else css+=(d[7]||d[3]).split(",").map(function(x){return"html body "+x;}).join(",")+"{zoom:"+K+"}";
+    }
+    if(d[0]==="gridcols"&&+v.cols&&+v.cols!==3)css+="@media (min-width:1051px){html body .work{grid-template-columns:repeat("+(+v.cols)+",minmax(0,1fr))!important}html body .work .thumbnail-item{grid-column:auto!important}html body .work .grid-mood.wide{grid-column:1/-1!important}}";
+    if(v.bg)css+="html body "+sels[0]+(d[0]==="overlay"?",html body .overlay":"")+"{background:"+v.bg+"!important}";});
+  styleEl.textContent=css;ensureFonts();
+}
+
+/* logo: every line is stretched with letter-spacing so all lines share the same left and right edge */
+function fitLogo(){
+  Array.prototype.forEach.call(document.querySelectorAll(".logo"),function(el){
+    var lines=el.querySelectorAll(".logo-line");if(!lines.length)return;
+    var W=el.clientWidth;if(!W)return;
+    el.style.fontSize="100px";
+    var ws=Array.prototype.map.call(lines,function(l){l.style.letterSpacing="0px";l.style.marginRight="0px";return l.getBoundingClientRect().width;});
+    var max=Math.max.apply(null,ws);if(!max){el.style.fontSize="";return;}
+    var fs=Math.floor(W/max*100*100)/100;el.style.fontSize=fs+"px";
+    Array.prototype.forEach.call(lines,function(l,i){var n=Array.from(l.textContent).length,w=l.getBoundingClientRect().width;
+      if(n<2)return;var ls=(W-w)/(n-1);l.style.letterSpacing=ls+"px";l.style.marginRight=(-ls)+"px";});
+  });
+}
+var fitT=0;window.addEventListener("resize",function(){clearTimeout(fitT);fitT=setTimeout(fitLogo,80);});
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitLogo);
+
+/* carousel */
+function feats(){return visible().filter(function(p){return p.featured;});}
+function go(i){var n=feats().length;if(!n)return;ci=((i%n)+n)%n;var w=document.getElementById("cw"),c=document.getElementById("cn");if(w){w.style.transform="translateX("+(-ci*100)+"%)";Array.prototype.forEach.call(w.children,function(a,k){if(k===ci)a.removeAttribute("tabindex");else a.setAttribute("tabindex","-1");});}if(c)c.textContent=(ci+1)+" / "+n;}
+function startAuto(){clearInterval(autoTimer);if(REDUCED||editorOpen||openOv||feats().length<2||!document.getElementById("cw"))return;autoTimer=setInterval(function(){var c=document.getElementById("carousel");if(c&&!c.matches(":hover")&&!document.hidden)go(ci+1);},6000);}
+var sx=null,sy=0;
+app.addEventListener("pointerdown",function(e){if(e.target.closest("#carousel")){sx=e.clientX;sy=e.clientY;swiped=false;}});
+app.addEventListener("pointerup",function(e){if(sx===null)return;var dx=e.clientX-sx,dy=e.clientY-sy;sx=null;if(Math.abs(dx)>40&&Math.abs(dx)>Math.abs(dy)){swiped=true;go(ci+(dx<0?1:-1));startAuto();}});
+app.addEventListener("pointercancel",function(){sx=null;});
+
+app.addEventListener("click",function(e){
+  var t=e.target,b;
+  if(swiped&&t.closest(".slide")){e.preventDefault();swiped=false;return;}
+  if((b=t.closest("[data-dir]"))){go(ci+(+b.dataset.dir));startAuto();return;}
+  if((b=t.closest("[data-open]"))){openOv=b.dataset.open;render(true);return;}
+  if(t.closest("[data-close]")){closeOv();return;}
+  if(openOv&&t.closest(".overlay a[href^='#']")){openOv="";}
+  if(t.closest("#editbtn")){openEditor();}
+});
+function closeOv(){openOv="";if(/^#(arkiv|nyheter)$/.test(location.hash))history.replaceState(null,"",location.pathname+location.search);render(true);}
+document.addEventListener("keydown",function(e){
+  if(editorOpen)return;
+  if(e.key==="Escape"&&openOv){closeOv();return;}
+  if(openOv||/input|textarea/i.test((e.target||{}).tagName||""))return;
+  if(document.getElementById("cw")&&(e.key==="ArrowRight"||e.key==="ArrowLeft")){go(ci+(e.key==="ArrowRight"?1:-1));startAuto();}
+});
+
+/* ---------- editor ---------- */
+var editorOpen=false, tab="prosjekter", sel=null, saving=false, imgTarget="p";
+var ed=document.createElement("div");ed.className="ed";ed.hidden=true;ed.setAttribute("role","dialog");ed.setAttribute("aria-label","Rediger nettsiden");
+document.body.appendChild(ed);
+
+function sizeOf(){try{return new Blob([JSON.stringify(state)]).size;}catch(_){return JSON.stringify(state).length;}}
+function mb(n){return(n/1048576).toFixed(1).replace(".",",")+" MB";}
+function setDirty(noRender){dirty=true;updateBar();if(!noRender)scheduleSite();}
+var siteTimer=0;function scheduleSite(){clearTimeout(siteTimer);siteTimer=setTimeout(function(){render(true);},250);}
+function status(msg,cls){var s=ed.querySelector(".ed-status");if(s){s.textContent=msg;s.className="ed-status"+(cls?" "+cls:"");}}
+function updateBar(){
+  var sz=sizeOf(),pct=Math.min(100,sz/LIMIT*100);
+  var m=ed.querySelector(".meter");if(m){if(assetUse&&assetUse.maxBytes){var ap=Math.min(100,assetUse.bytes/assetUse.maxBytes*100);m.innerHTML='<span>Bildelager</span><i><b style="width:'+ap.toFixed(1)+'%"></b></i><span>'+mb(assetUse.bytes)+' av '+mb(assetUse.maxBytes)+(sz>LIMIT*0.6?' · siden '+mb(sz)+' av '+mb(LIMIT):'')+'</span>';}
+    else m.innerHTML='<span>Plass brukt</span><i><b style="width:'+pct.toFixed(1)+'%"></b></i><span>'+mb(sz)+' av '+mb(LIMIT)+'</span>';}
+  var sv=ed.querySelector("#ed-save");if(sv)sv.disabled=!dirty||saving||sz>LIMIT;
+  if(sz>LIMIT)status("Siden er for stor til å lagres. Fjern noen bilder.","err");
+  else if(!saving)status(dirty?"Du har endringer som ikke er publisert.":"Alt er lagret.",dirty?"warn":"");
+}
+function openEditor(){editorOpen=true;ed.hidden=false;document.body.style.overflow="hidden";if(!sel&&state.projects[0])sel=state.projects[0].id;drawEditor();render(true);refreshAssetUse();}
+function closeEditor(){editorOpen=false;ed.hidden=true;document.body.style.overflow="";render(true);}
+
+function drawEditor(){
+  ed.innerHTML='<div class="ed-bar"><h2>Rediger nettsiden</h2><div class="tabs" role="tablist">'+
+    [["prosjekter","Prosjekter"],["kategorier","Kategorier"],["utseende","Utseende"],["nettsted","Nettstedet"],["nyheter","Nyheter"]].map(function(t){return'<button type="button" role="tab" data-tab="'+t[0]+'" aria-selected="'+(tab===t[0])+'">'+t[1]+'</button>';}).join("")+
+    '</div><span class="ed-status"></span><span class="meter"></span><button class="btn ghost" type="button" id="ed-discard">Forkast endringer</button><button class="btn primary" type="button" id="ed-save">Lagre og publiser</button><button class="btn ghost" type="button" id="ed-close">Se siden</button></div><div class="ed-body" id="ed-body"></div><input type="file" id="file" accept="image/*" multiple hidden>';
+  drawTab();updateBar();
+}
+function drawTab(){
+  var b=ed.querySelector("#ed-body");
+  if(tab==="prosjekter"){b.innerHTML='<div class="ed-cols"><div class="ed-list" id="ed-list"></div><div class="ed-form" id="ed-form"></div></div>';drawList();drawForm();}
+  else if(tab==="nettsted")b.innerHTML=siteForm();
+  else if(tab==="kategorier")b.innerHTML=catForm();
+  else if(tab==="utseende"){loadPreviewFonts();b.innerHTML=styleForm();}
+  else b.innerHTML=newsForm();
+}
+function drawList(){
+  var l=ed.querySelector("#ed-list");if(!l)return;
+  l.innerHTML='<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px"><button class="btn" type="button" id="ed-add">+ Nytt prosjekt</button><button class="btn" type="button" id="ed-addgroup">+ Prosjekt med 3 delprosjekter</button></div>'+
+    (state.projects.length?'':'<p class="hint">Ingen prosjekter ennå.</p>')+
+    state.projects.map(function(p,i){var im=p.images&&p.images[0],nk=allKids(p).length,par=parentOf(p);
+      return'<div class="row'+(par?' kid':'')+'" data-sel="'+p.id+'" aria-current="'+(sel===p.id)+'" tabindex="0"><div class="th">'+(im?'<img src="'+im.src+'" alt="">':'')+'</div><div style="min-width:0"><div class="nm">'+esc(p.nr)+' '+esc(p.title||"Uten tittel")+'</div><div class="sub">'+(p.hidden?'Skjult':(p.featured?'I karusellen':'Synlig'))+' · '+(p.images?p.images.length:0)+' bilder'+(nk?' · '+nk+' delprosjekt'+(nk===1?'':'er'):'')+(par?' · del av «'+esc(par.title||"Uten tittel")+'»':'')+'</div></div>'+
+      '<div class="mv"><button type="button" data-mv="-1" data-i="'+i+'" aria-label="Flytt opp"'+(i===0?' disabled':'')+'>↑</button><button type="button" data-mv="1" data-i="'+i+'" aria-label="Flytt ned"'+(i===state.projects.length-1?' disabled':'')+'>↓</button></div></div>';}).join("")+
+    '<p class="hint" style="margin-top:10px">Rekkefølgen her er rekkefølgen i rutenettet og karusellen.</p>';
+}
+function fld(id,label,val,o){o=o||{};
+  return'<div class="fld'+(o.cls?" "+o.cls:"")+'"><label for="'+id+'">'+label+'</label>'+(o.area?'<textarea id="'+id+'" data-k="'+o.k+'"'+(o.h?' style="min-height:'+o.h+'px"':'')+'>'+esc(val)+'</textarea>':'<input id="'+id+'" data-k="'+o.k+'" value="'+esc(val)+'"'+(o.type?' type="'+o.type+'"':'')+(o.ph?' placeholder="'+esc(o.ph)+'"':'')+'>')+(o.hint?'<span class="hint">'+o.hint+'</span>':'')+'</div>';}
+function drop(target,text){return'<div class="drop" data-drop="'+target+'" tabindex="0" role="button">'+text+'</div>';}
+function drawForm(){
+  var f=ed.querySelector("#ed-form");if(!f)return;var p=byId(sel);
+  if(!p){f.innerHTML='<p class="hint">Velg et prosjekt i listen, eller lag et nytt.</p>';return;}
+  f.innerHTML='<div class="f4">'+fld("p-nr","Nummer",p.nr,{k:"nr"})+fld("p-title","Tittel",p.title,{k:"title",cls:"s2"})+fld("p-year","År",p.year,{k:"year",hint:"F.eks. 2024–26"})+
+    fld("p-place","Sted",p.place,{k:"place",cls:"s2",ph:"Oslo, Oslo"})+'</div>'+pcatHtml(p)+
+    factsForm(p)+fld("p-text","Tekst",p.text,{k:"text",area:1,h:200,hint:"Vises rett under informasjonen øverst på prosjektsiden. En tom linje gir nytt avsnitt."})+groupHtml(p)+
+    '<div class="checks"><label><input type="checkbox" id="p-feat" data-k="featured"'+(p.featured?' checked':'')+'> Vis i karusellen øverst</label><label><input type="checkbox" id="p-hide" data-k="hidden"'+(p.hidden?' checked':'')+'> Skjul fra nettsiden</label></div>'+
+    '<div class="fld"><label>Bilder</label>'+drop("p","Slipp bilder her, eller klikk for å velge<br><span class=\"hint\">Bilde 1 er forsidebildet. Bilde 2 vises når man holder musen over prosjektet i rutenettet. Bildene gjøres mindre automatisk.</span>")+'</div>'+
+    '<div class="imgs" id="imgs-p">'+imgsHtml("p")+'</div>'+
+    '<div id="delzone"><button class="btn danger" type="button" id="p-del">Slett prosjekt</button></div>';
+}
+var FACT_PRESETS=["Boligtype","Privat / offentlig","Areal (kvm)","Byggherre","Status","Rolle","Entreprenør","Fotograf"];
+function factsForm(p){var fs=p.facts||[];
+  return'<div class="fld"><label>Fakta om prosjektet</label><datalist id="fact-vals"><option value="Privat"><option value="Offentlig"><option value="Ferdigstilt"><option value="Under bygging"><option value="Under planlegging"><option value="Konkurranse"></datalist>'+
+   (fs.length?fs.map(function(f,i){return'<div class="factrow"><input data-fact="l" data-i="'+i+'" id="fl-'+i+'" list="fact-labels" placeholder="Felt, f.eks. Areal" value="'+esc(f.l||"")+'" aria-label="Felt"><input data-fact="v" data-i="'+i+'" id="fv-'+i+'" list="fact-vals" placeholder="Verdi, f.eks. 120 m²" value="'+esc(f.v||"")+'" aria-label="Verdi"><button class="btn ghost" type="button" data-factdel="'+i+'">Fjern</button></div>';}).join(""):'<span class="hint">Ingen ennå. Legg til felt som vises under tittelen, f.eks. areal og om prosjektet er privat eller offentlig.</span>')+
+   '<datalist id="fact-labels">'+FACT_PRESETS.map(function(x){return'<option value="'+esc(x)+'">';}).join("")+'</datalist>'+
+   '<div class="chips">'+FACT_PRESETS.filter(function(x){return!fs.some(function(f){return f.l===x;});}).map(function(x){return'<button type="button" data-factadd="'+esc(x)+'">+ '+esc(x)+'</button>';}).join("")+'<button type="button" data-factadd="">+ Eget felt</button></div></div>';}
+function groupHtml(p){
+  var ak=allKids(p),h='';
+  if(!ak.length){
+    var opts=state.projects.filter(function(q){return q.id!==p.id&&!q.parent;});
+    h+='<div class="fld"><label for="p-parent">Del av prosjekt</label><select id="p-parent"><option value="">Ingen. Vises som eget prosjekt</option>'+opts.map(function(q){return'<option value="'+q.id+'"'+(p.parent===q.id?' selected':'')+'>'+esc(q.nr)+' '+esc(q.title||"Uten tittel")+'</option>';}).join("")+'</select><span class="hint">Velg et prosjekt for å gjøre dette til et delprosjekt. Det vises da på siden til det prosjektet, ikke i rutenettet.</span></div>';
+  }
+  if(!p.parent){
+    h+='<div class="fld"><label>Delprosjekter</label>'+(ak.length?'<div class="kidlist">'+ak.map(function(q){return'<button class="btn ghost" type="button" data-sel="'+q.id+'">'+esc(q.nr)+' '+esc(q.title||"Uten tittel")+'</button>';}).join("")+'</div>':'<span class="hint">Ingen ennå. Legg til delprosjekter for å samle flere prosjekter under dette.</span>')+
+      '<div><button class="btn" type="button" id="ed-addkid">+ Legg til delprosjekt</button></div>'+(ak.length?'<span class="hint">Delprosjektene vises som egne miniatyrer på siden til dette prosjektet. Uten egne bilder bruker prosjektet bildene fra delprosjektene som forside. Er kategori ikke valgt, brukes delprosjektenes kategorier.</span>':'')+'</div>';
+  }
+  return h;
+}
+function pcatOpts(p){var o=(state.site.categories||[]).slice(),low=o.map(function(x){return x.toLowerCase();});kwOwn(p).forEach(function(k){if(low.indexOf(k.toLowerCase())<0){o.push(k);low.push(k.toLowerCase());}});return o;}
+function pcatHtml(p){var o=pcatOpts(p);
+  return'<div class="fld"><label>Kategori</label>'+(o.length?'<div class="pcats">'+o.map(function(c,i){return'<label><input type="checkbox" id="pc-'+i+'" data-pcat="'+esc(c)+'"'+(hasCatOwn(p,c)?' checked':'')+'> '+esc(c)+'</label>';}).join("")+'</div>':'<span class="hint">Ingen kategorier ennå.</span>')+
+  '<span class="hint">Kategoriene legges til, endres og fjernes i fanen «Kategorier».</span></div>';}
+function catCount(c){return state.projects.filter(function(p){return hasCatOwn(p,c);}).length;}
+function catForm(){var c=state.site.categories||[];
+  return'<div class="ed-form"><p class="hint" style="margin:0">Kategoriene vises som lenker øverst på siden, i denne rekkefølgen. Hvis du gir en kategori nytt navn, følger prosjektene med.</p>'+
+  '<div id="catlist">'+c.map(function(x,i){var n=catCount(x);return'<div class="catrow" data-crow="'+i+'"><input id="cat-'+i+'" data-cat-i="'+i+'" data-old="'+esc(x)+'" value="'+esc(x)+'" aria-label="Navn på kategori"><span class="cnt">'+n+' prosjekt'+(n===1?'':'er')+'</span>'+
+    '<div class="mv" style="display:flex;align-items:center;gap:2px"><button type="button" data-cmv="-1" data-i="'+i+'" aria-label="Flytt opp"'+(i===0?' disabled':'')+'>↑</button><button type="button" data-cmv="1" data-i="'+i+'" aria-label="Flytt ned"'+(i===c.length-1?' disabled':'')+'>↓</button><button class="btn ghost" type="button" data-cdel="'+i+'" style="margin-left:8px">Fjern</button></div></div>';}).join("")+'</div>'+
+  (c.length?'':'<p class="hint">Ingen kategorier ennå.</p>')+'<button class="btn" type="button" id="cat-add" style="align-self:flex-start">+ Ny kategori</button></div>';}
+function styleForm(){var st=sty();
+  var fontSel=function(k,v){return'<div class="fld"><label for="st-'+k+'-font">Font</label><select id="st-'+k+'-font" data-st="'+k+'" data-sp="font"><option value="">Standard</option>'+
+    FONT_LIST.map(function(f){return'<option value="'+f[0]+'"'+(v===f[0]?' selected':'')+'>'+f[0]+'</option>';}).join("")+'</select></div>';};
+  var wSel=function(k,v){return'<div class="fld"><label for="st-'+k+'-weight">Tykkelse</label><select id="st-'+k+'-weight" data-st="'+k+'" data-sp="weight">'+WEIGHTS.map(function(w){return'<option value="'+w[0]+'"'+(String(v||"")===w[0]?' selected':'')+'>'+w[1]+'</option>';}).join("")+'</select></div>';};
+  var rSel=function(k,p,v,min,max,def,label,unit){var cur=+v||def;return'<div class="fld"><label for="st-'+k+'-'+p+'">'+label+' <b id="stv-'+k+'-'+p+'">'+cur+unit+'</b></label><div class="cp"><input type="range" id="st-'+k+'-'+p+'" data-st="'+k+'" data-sp="'+p+'" min="'+min+'" max="'+max+'" step="'+(p==="cols"?1:5)+'" value="'+cur+'" style="flex:1;min-width:0">'+(cur!==def?'<button type="button" data-streset="'+k+'" data-sp="'+p+'">Standard</button>':'<span class="def">Standard</span>')+'</div></div>';};
+  var cSel=function(k,p,v,def,label){return'<div class="fld"><label for="st-'+k+'-'+p+'">'+label+'</label><div class="cp"><input type="color" id="st-'+k+'-'+p+'" data-st="'+k+'" data-sp="'+p+'" value="'+esc(v||def)+'">'+(v?'<button type="button" data-streset="'+k+'" data-sp="'+p+'">Standard</button>':'<span class="def">Standard</span>')+'</div></div>';};
+  return'<div class="ed-form" style="max-width:1100px"><p class="hint" style="margin:0">Endringene vises på siden med en gang. Trykk «Se siden» for å se dem, og «Lagre og publiser» når du er fornøyd.</p>'+
+  STYLE_EL.map(function(d){var k=d[0],v=st[k]||{},c=d[4].split(" "),cells="";
+    cells+=c.indexOf("font")>=0?fontPicker(k,v.font):'<div></div>';
+    cells+=c.indexOf("weight")>=0?wSel(k,v.weight):'<div></div>';
+    cells+=c.indexOf("color")>=0?cSel(k,"color",v.color,d[5],"Tekstfarge"):'<div></div>';
+    cells+=c.indexOf("bg")>=0?cSel(k,"bg",v.bg,d[6],"Bakgrunn"):'<div></div>';
+    cells+=c.indexOf("size")>=0?rSel(k,"size",v.size,k==="pimg"?40:50,k==="pimg"?100:200,100,"Størrelse","%"):c.indexOf("cols")>=0?rSel(k,"cols",v.cols,2,6,3,"Per rad",""):'<div></div>';
+    return'<div class="strow"><div class="nm2">'+d[1]+(d[2]?'<small>'+d[2]+'</small>':'')+'</div>'+cells+'</div>';}).join("")+
+  '<div><button class="btn ghost" type="button" id="st-resetall">Tilbakestill alt utseende</button></div></div>';}
+function listFor(target){if(target==="p"){var p=byId(sel);if(!p)return null;p.images=p.images||[];return p.images;}var s=state.site;if(target==="office"){s.officeImages=s.officeImages||[];return s.officeImages;}s.moods=s.moods||[];return s.moods;}
+function imgsHtml(target){var arr=listFor(target)||[];return arr.map(function(im,i){
+  var extra=target==="office"?'<input data-imf="caption" data-t="office" data-i="'+i+'" id="oc-'+i+'" placeholder="Bildetekst (valgfri)" value="'+esc(im.caption||"")+'" aria-label="Bildetekst"><input data-imf="link" data-t="office" data-i="'+i+'" id="ol-'+i+'" placeholder="Lenke (valgfri)" value="'+esc(im.link||"")+'" aria-label="Lenke">'
+    :'<input data-imf="alt" data-t="'+target+'" data-i="'+i+'" id="'+target+'a-'+i+'" placeholder="'+(target==="p"?'Bildetekst (valgfri)':'Beskrivelse (valgfri)')+'" value="'+esc(im.alt||"")+'" aria-label="Bildetekst">';
+  var big=Math.max(im.w||0,im.h||0);
+  return'<div class="im"><div class="pv"><img src="'+im.src+'" alt="">'+(target==="p"&&i===0?'<span class="cv">Forside</span>':'')+(target==="p"&&i===1?'<span class="cv">Hover</span>':'')+'</div>'+extra+(im.w?'<span class="px'+(big&&big<1200?' low':'')+'">'+im.w+'×'+im.h+' px'+(big&&big<1200?' – lite, kan bli uskarpt':'')+'</span>':'')+
+  '<div class="acts">'+(i>0?'<button type="button" data-im="first" data-t="'+target+'" data-i="'+i+'">Flytt først</button><button type="button" data-im="left" data-t="'+target+'" data-i="'+i+'" aria-label="Flytt til venstre">←</button>':'')+(i<arr.length-1?'<button type="button" data-im="right" data-t="'+target+'" data-i="'+i+'" aria-label="Flytt til høyre">→</button>':'')+'<button type="button" data-im="del" data-t="'+target+'" data-i="'+i+'">Fjern</button></div></div>';}).join("");}
+function siteForm(){var s=state.site;
+  return'<div class="ed-form"><h3 style="border:0;padding:0;margin:0">Topp</h3><div class="f4">'+fld("s-name","Navn",s.name,{k:"name",cls:"s2",hint:"Brukes i bunnlinjen og som sidetittel."})+fld("s-logo","Logo",s.logo,{k:"logo",area:1,h:70,cls:"s2",hint:"Én linje per rad. Alle linjene strekkes til samme bredde."})+'</div>'+
+  fld("s-tag","Kort beskrivelse under logoen",s.tagline,{k:"tagline",area:1,h:80})+
+  '<h3>Stemningsbilder i rutenettet</h3><p class="hint">Valgfritt. Store bilder som legges inn mellom prosjektene, slik som på forbildet.</p>'+drop("mood","Slipp bilder her, eller klikk for å velge")+'<div class="imgs" id="imgs-mood">'+imgsHtml("mood")+'</div>'+
+  '<h3>Kontorfeltet nederst</h3>'+fld("s-ht","Overskrift",s.heroTitle,{k:"heroTitle"})+fld("s-ol","Ingress",s.officeLead,{k:"officeLead"})+fld("s-ot","Tekst",s.officeText,{k:"officeText",area:1,h:180,hint:"En tom linje gir nytt avsnitt."})+
+  '<div class="f4">'+fld("s-lt","Fremhevet lenke – tekst",s.linkText,{k:"linkText",cls:"s2",hint:"Valgfritt, f.eks. et intervju."})+fld("s-lu","Fremhevet lenke – adresse",s.linkUrl,{k:"linkUrl",cls:"s2",ph:"https://"})+'</div>'+
+  '<div class="fld"><label>Kontorbilder (rad som kan blas sidelengs)</label>'+drop("office","Slipp bilder her, eller klikk for å velge")+'</div><div class="imgs" id="imgs-office">'+imgsHtml("office")+'</div>'+
+  '<h3>Bildelager</h3><p class="hint">Nye bilder lagres i et eget bildelager, så siden ikke fylles opp. Eldre bilder ligger fortsatt inne i selve siden.</p><div><button class="btn" type="button" id="mig-btn"'+(assetsNs?'':' disabled')+'>Flytt eldre bilder til bildelageret</button></div>'+
+  '<h3>Kontakt</h3><div class="f4">'+fld("s-ch","Overskrift",s.contactHeading,{k:"contactHeading",cls:"s2"})+fld("s-ct","Tekst",s.contactText,{k:"contactText",cls:"s2"})+
+  fld("s-mail","E-post",s.email,{k:"email",type:"email",cls:"s2"})+fld("s-phone","Telefon",s.phone,{k:"phone",cls:"s2"})+fld("s-ig","Instagram (brukernavn eller lenke)",s.instagram,{k:"instagram",cls:"s2"})+'</div></div>';}
+function newsForm(){var n=state.news||[];
+  return'<div class="ed-form"><p class="hint" style="margin:0">Nyhetene vises når man trykker «Nyheter» i høyre kant.</p><button class="btn" type="button" id="n-add" style="align-self:flex-start">+ Ny nyhet</button>'+(n.length?'':'<p class="hint">Ingen nyheter ennå.</p>')+
+  n.map(function(x,i){return'<div class="newsrow"><div class="fld"><label for="n-d-'+x.id+'">Dato</label><input type="date" id="n-d-'+x.id+'" data-n="date" data-i="'+i+'" value="'+esc(x.date)+'"></div><div class="fld"><label for="n-t-'+x.id+'">Tekst</label><input id="n-t-'+x.id+'" data-n="text" data-i="'+i+'" value="'+esc(x.text)+'"></div><div class="fld"><label for="n-l-'+x.id+'">Lenke (valgfri)</label><input id="n-l-'+x.id+'" data-n="link" data-i="'+i+'" value="'+esc(x.link)+'" placeholder="https://"></div><button class="btn ghost" type="button" data-ndel="'+i+'">Fjern</button></div>';}).join("")+'</div>';}
+
+/* image handling */
+function loadImg(file){return new Promise(function(res,rej){var u=URL.createObjectURL(file),img=new Image();img.onload=function(){res({img:img,u:u});};img.onerror=function(){URL.revokeObjectURL(u);
+  var fr=new FileReader();fr.onload=function(){var i2=new Image();i2.onload=function(){res({img:i2});};i2.onerror=rej;i2.src=fr.result;};fr.onerror=rej;fr.readAsDataURL(file);};img.src=u;});}
+function toBlob(c){return new Promise(function(res){
+  function jpg(){c.toBlob(function(b){res(b);},"image/jpeg",0.86);}
+  try{c.toBlob(function(b){if(b&&b.type==="image/webp")res(b);else jpg();},"image/webp",0.86);}catch(e){jpg();}});}
+function shrink(file){return loadImg(file).then(function(o){var img=o.img,w=img.naturalWidth,h=img.naturalHeight,s=Math.min(1,(assetsNs?2600:1800)/Math.max(w,h)),cw=Math.round(w*s),ch=Math.round(h*s);
+  var c=document.createElement("canvas");c.width=cw;c.height=ch;var x=c.getContext("2d");x.fillStyle="#ffffff";x.fillRect(0,0,cw,ch);x.drawImage(img,0,0,cw,ch);if(o.u)URL.revokeObjectURL(o.u);
+  var small=Math.max(w,h)<1200;
+  if(assetsNs)return toBlob(c).then(function(b){if(!b)throw new Error("blob");return assetsNs.upload(b).then(function(r){return{src:"/_blob/"+r.id,asset:r.id,alt:"",w:cw,h:ch,small:small};});});
+  return{src:c.toDataURL("image/jpeg",0.8),alt:"",w:cw,h:ch,small:small};});}
+function refreshAssetUse(){if(!assetsNs)return;assetsNs.list().then(function(r){assetUse=r&&r.usage||null;if(typeof updateBar==="function"&&ed&&!ed.hidden)updateBar();}).catch(function(){});}
+function migrateImages(){
+  if(!assetsNs){status("Bildelageret er ikke tilgjengelig i denne visningen.","err");return;}
+  var all=[];state.projects.forEach(function(p){(p.images||[]).forEach(function(im){all.push(im);});});
+  ["officeImages","moods"].forEach(function(k){(state.site[k]||[]).forEach(function(im){all.push(im);});});
+  var todo=all.filter(function(im){return im.src&&im.src.indexOf("data:")===0;}),n=0,fail=0;
+  if(!todo.length){status("Alle bilder ligger allerede i bildelageret.","ok");return;}
+  ed.classList.add("busy");
+  todo.reduce(function(pr,im){return pr.then(function(){status("Flytter bilde "+(++n)+" av "+todo.length+" …","warn");
+    return fetch(im.src).then(function(r){return r.blob();}).then(function(b){return assetsNs.upload(b);}).then(function(r){im.src="/_blob/"+r.id;im.asset=r.id;},function(){fail++;});});},Promise.resolve()).then(function(){
+    ed.classList.remove("busy");setDirty();refreshAssetUse();drawTab();
+    status(fail?fail+" bilde"+(fail>1?"r":"")+" kunne ikke flyttes. Prøv igjen.":"Ferdig. "+(todo.length-fail)+" bilder er flyttet. Trykk «Lagre og publiser».",fail?"err":"ok");});
+}
+function refreshImgs(target){var g=ed.querySelector("#imgs-"+target);if(g)g.innerHTML=imgsHtml(target);if(target==="p")drawList();}
+function addFiles(files,target){var arr=listFor(target);if(!arr||!files||!files.length)return;
+  var list=Array.prototype.filter.call(files,function(f){return/^image\//.test(f.type)||/\.(jpe?g|png|webp|gif|heic)$/i.test(f.name);});
+  if(!list.length){status("Bare bildefiler kan legges til.","err");return;}
+  status("Behandler "+list.length+" bilde"+(list.length>1?"r":"")+" …","warn");
+  var fail=0,full=0,small=0;
+  list.reduce(function(pr,f){return pr.then(function(){return shrink(f).then(function(im){if(im.small)small++;delete im.small;arr.push(im);},function(e){if(e&&(e.code==="quota_or_state"||e.code==="too_large"))full++;else fail++;});});},Promise.resolve()).then(function(){
+    refreshImgs(target);setDirty();refreshAssetUse();
+    if(full)status("Bildelageret er fullt eller bildet er for stort. "+full+" bilde"+(full>1?"r":"")+" ble ikke lagt til.","err");
+    else if(fail)status(fail+" bilde"+(fail>1?"r":"")+" kunne ikke leses. Prøv JPG eller PNG.","err");
+    else if(small)status(small+" bilde"+(small>1?"r er":" er")+" lite (under 1200 px) og kan bli uskarpt på store skjermer.","warn");
+    else status("","");});
+}
+
+ed.addEventListener("click",function(e){
+  var t=e.target,b;
+  if((b=t.closest("[data-fopen]"))){var lst=b.parentNode.querySelector(".fp-list"),open=lst.hidden;closePickers(lst);lst.hidden=!open;b.setAttribute("aria-expanded",String(open));
+    if(open){var on=lst.querySelector('[aria-selected="true"]')||lst.querySelector("button");if(on){lst.scrollTop=Math.max(0,on.offsetTop-lst.clientHeight/2);on.focus();}}return;}
+  if((b=t.closest("[data-fpick]"))){var fk=b.dataset.fpick,fv=b.dataset.val,so=sty()[fk]=sty()[fk]||{};if(fv)so.font=fv;else delete so.font;if(!Object.keys(so).length)delete sty()[fk];
+    applyStyle();fitLogo();var pk=b.closest(".fpick"),btn=pk.querySelector(".fp-btn");
+    btn.querySelector(".lbl").outerHTML=fv?'<span class="lbl" style="font-family:'+esc(fontStack(fv))+'">'+esc(fv)+'</span>':'<span class="lbl" style="font-family:var(--sans)">Standard</span>';
+    Array.prototype.forEach.call(pk.querySelectorAll("[data-fpick]"),function(o){o.setAttribute("aria-selected",String(o===b));});closePickers();btn.focus();setDirty(true);return;}
+  if(!t.closest(".fpick"))closePickers();
+  if((b=t.closest("[data-tab]"))){tab=b.dataset.tab;drawEditor();return;}
+  if(t.closest("#ed-close")){closeEditor();return;}
+  if(t.closest("#ed-discard")){if(!dirty)return;state=JSON.parse(ORIGINAL);dirty=false;if(!byId(sel))sel=state.projects[0]&&state.projects[0].id;drawEditor();render(true);status("Endringene er forkastet.");return;}
+  if(t.closest("#ed-save")){save();return;}
+  if(t.closest("#ed-add")){var p={id:uid("p"),nr:nextNr(),title:"Nytt prosjekt",place:"",year:String(new Date().getFullYear()),category:"",text:"",featured:false,hidden:false,images:[]};state.projects.unshift(p);sel=p.id;drawList();drawForm();setDirty();var ti=ed.querySelector("#p-title");if(ti){ti.focus();ti.select();}return;}
+  if(t.closest("#ed-addgroup")){var gn=nextNr(),g={id:uid("p"),nr:gn,title:"Nytt prosjekt",place:"",year:String(new Date().getFullYear()),category:"",text:"",featured:false,hidden:false,images:[]},ks=[1,2,3].map(function(n){return{id:uid("p"),nr:gn+"."+n,title:"Delprosjekt "+n,place:"",year:g.year,category:"",text:"",featured:false,hidden:false,images:[],parent:g.id};});
+    state.projects.unshift.apply(state.projects,[g].concat(ks));sel=g.id;drawList();drawForm();setDirty();var gt=ed.querySelector("#p-title");if(gt){gt.focus();gt.select();}return;}
+  if(t.closest("#ed-addkid")){var gp=byId(sel);if(!gp||gp.parent)return;var ak=allKids(gp),kp={id:uid("p"),nr:gp.nr+"."+(ak.length+1),title:"Delprosjekt "+(ak.length+1),place:gp.place||"",year:gp.year||String(new Date().getFullYear()),category:gp.category||"",text:"",featured:false,hidden:false,images:[],parent:gp.id};
+    var at=state.projects.indexOf(ak.length?ak[ak.length-1]:gp)+1;state.projects.splice(at,0,kp);sel=kp.id;drawList();drawForm();setDirty();var kt=ed.querySelector("#p-title");if(kt){kt.focus();kt.select();}return;}
+  if(t.closest("#mig-btn")){migrateImages();return;}
+  if((b=t.closest("[data-factadd]"))){var pf2=byId(sel);if(!pf2)return;pf2.facts=pf2.facts||[];pf2.facts.push({l:b.dataset.factadd,v:""});drawForm();setDirty();var fi=ed.querySelector("#"+(b.dataset.factadd?"fv-":"fl-")+(pf2.facts.length-1));if(fi)fi.focus();return;}
+  if((b=t.closest("[data-factdel]"))){var pf3=byId(sel);if(!pf3||!pf3.facts)return;pf3.facts.splice(+b.dataset.factdel,1);drawForm();setDirty();return;}
+  if((b=t.closest("[data-mv]"))){var i=+b.dataset.i,j=i+(+b.dataset.mv),a=state.projects;if(j<0||j>=a.length)return;var tmp=a[i];a[i]=a[j];a[j]=tmp;drawList();setDirty();return;}
+  if((b=t.closest("[data-sel]"))){sel=b.dataset.sel;drawList();drawForm();var ff=ed.querySelector("#ed-form");if(ff&&window.innerWidth<=800)ff.scrollIntoView({block:"start"});return;}
+  if((b=t.closest("[data-drop]"))){imgTarget=b.dataset.drop;ed.querySelector("#file").click();return;}
+  if((b=t.closest("[data-im]"))){var arr=listFor(b.dataset.t),k=+b.dataset.i,act=b.dataset.im;
+    if(act==="del")arr.splice(k,1);else if(act==="first")arr.unshift(arr.splice(k,1)[0]);else{var m2=k+(act==="left"?-1:1),x=arr[k];arr[k]=arr[m2];arr[m2]=x;}
+    refreshImgs(b.dataset.t);setDirty();return;}
+  if(t.closest("#p-del")){ed.querySelector("#delzone").innerHTML='<div class="confirm"><span>Slette «'+esc(byId(sel).title)+'» og bildene?'+(allKids(byId(sel)).length?' Delprosjektene beholdes som egne prosjekter.':'')+' Det kan angres med «Forkast endringer» frem til du publiserer.</span><button class="btn danger" type="button" id="p-del-yes">Slett</button><button class="btn ghost" type="button" id="p-del-no">Avbryt</button></div>';return;}
+  if(t.closest("#p-del-no")){ed.querySelector("#delzone").innerHTML='<button class="btn danger" type="button" id="p-del">Slett prosjekt</button>';return;}
+  if(t.closest("#p-del-yes")){var idx=state.projects.findIndex(function(q){return q.id===sel;});state.projects.forEach(function(q){if(q.parent===sel)delete q.parent;});state.projects.splice(idx,1);var nx=state.projects[Math.min(idx,state.projects.length-1)];sel=nx&&nx.id;drawList();drawForm();setDirty();return;}
+  if(t.closest("#n-add")){state.news=state.news||[];state.news.unshift({id:uid("n"),date:new Date().toISOString().slice(0,10),text:"",link:""});drawTab();setDirty();var f1=ed.querySelector("[data-n='text']");if(f1)f1.focus();return;}
+  if((b=t.closest("[data-ndel]"))){state.news.splice(+b.dataset.ndel,1);drawTab();setDirty();return;}
+  if(t.closest("#cat-add")){state.site.categories=state.site.categories||[];var base="Ny kategori",nm=base,q=2;while(state.site.categories.some(function(x){return x.toLowerCase()===nm.toLowerCase();}))nm=base+" "+(q++);state.site.categories.push(nm);drawTab();setDirty();var ci2=ed.querySelector("#cat-"+(state.site.categories.length-1));if(ci2){ci2.focus();ci2.select();}return;}
+  if((b=t.closest("[data-cmv]"))){var cl=state.site.categories,a1=+b.dataset.i,a2=a1+(+b.dataset.cmv);if(a2<0||a2>=cl.length)return;var tc=cl[a1];cl[a1]=cl[a2];cl[a2]=tc;drawTab();setDirty();return;}
+  if((b=t.closest("[data-cdel]"))){var di=+b.dataset.cdel,row=b.closest(".catrow"),nm2=state.site.categories[di],cnt=catCount(nm2);
+    if(row.querySelector(".confirm"))return;
+    row.insertAdjacentHTML("beforeend",'<div class="confirm"><span>Fjerne «'+esc(nm2)+'»?'+(cnt?' '+cnt+' prosjekt'+(cnt===1?'':'er')+' mister denne kategorien, men selve prosjektene beholdes.':'')+'</span><button class="btn danger" type="button" data-cdelyes="'+di+'">Fjern</button><button class="btn ghost" type="button" data-cdelno>Avbryt</button></div>');return;}
+  if(t.closest("[data-cdelno]")){drawTab();return;}
+  if((b=t.closest("[data-cdelyes]"))){var dn=state.site.categories.splice(+b.dataset.cdelyes,1)[0];state.projects.forEach(function(p){if(hasCatOwn(p,dn))p.category=kwOwn(p).filter(function(k){return k.toLowerCase()!==dn.toLowerCase();}).join(" + ");});drawTab();setDirty();return;}
+  if((b=t.closest("[data-streset]"))){var so=sty()[b.dataset.streset];if(so){delete so[b.dataset.sp];if(!Object.keys(so).length)delete sty()[b.dataset.streset];}applyStyle();fitLogo();drawTab();setDirty(true);return;}
+  if(t.closest("#st-resetall")){state.site.style={};applyStyle();fitLogo();drawTab();setDirty(true);return;}
+});
+ed.addEventListener("keydown",function(e){
+  var fl=e.target.closest(".fp-list");
+  if(e.key==="Escape"&&(fl||e.target.closest(".fpick"))){var op=ed.querySelector(".fp-list:not([hidden])");if(op){e.preventDefault();closePickers();var bb=op.parentNode.querySelector(".fp-btn");if(bb)bb.focus();}return;}
+  if(fl&&(e.key==="ArrowDown"||e.key==="ArrowUp")){e.preventDefault();var opts=Array.prototype.slice.call(fl.querySelectorAll("button")),ix=opts.indexOf(e.target)+(e.key==="ArrowDown"?1:-1);if(opts[ix])opts[ix].focus();return;}var r=e.target.closest(".row,[data-drop]");if(r&&(e.key==="Enter"||e.key===" ")&&e.target===r){e.preventDefault();r.click();}});
+ed.addEventListener("input",function(e){
+  var t=e.target,k=t.dataset.k;
+  if(t.dataset.fact){var pf=byId(sel);if(!pf||!pf.facts||!pf.facts[+t.dataset.i])return;pf.facts[+t.dataset.i][t.dataset.fact]=t.value;setDirty();return;}
+  if(t.dataset.imf){var arr=listFor(t.dataset.t);arr[+t.dataset.i][t.dataset.imf]=t.value;setDirty();return;}
+  if(t.dataset.n){state.news[+t.dataset.i][t.dataset.n]=t.value;setDirty();return;}
+  if(t.dataset.st){var so=sty()[t.dataset.st]=sty()[t.dataset.st]||{};if(t.value)so[t.dataset.sp]=t.value;else delete so[t.dataset.sp];
+    if(t.type==="range"){var lv=document.getElementById("stv-"+t.dataset.st+"-"+t.dataset.sp);if(lv)lv.textContent=t.value+(t.dataset.sp==="cols"?"":"%");}applyStyle();fitLogo();if(t.type==="color"||t.type==="range"){var cp=t.parentNode,rb=cp.querySelector("[data-streset],.def");if(rb&&rb.className==="def")rb.outerHTML='<button type="button" data-streset="'+t.dataset.st+'" data-sp="'+t.dataset.sp+'">Standard</button>';}setDirty(true);return;}
+  if(t.dataset.pcat!=null){var pq=byId(sel);if(!pq)return;pq.category=Array.prototype.filter.call(ed.querySelectorAll("[data-pcat]"),function(x){return x.checked;}).map(function(x){return x.dataset.pcat;}).join(" + ");drawList();setDirty();return;}
+  if(t.dataset.catI!=null)return;
+  if(!k)return;
+  if(tab==="nettsted"){if(k==="categories")state.site.categories=t.value.split(/\n/).map(function(x){return x.trim();}).filter(Boolean);else state.site[k]=t.value;setDirty();return;}
+  var pp=byId(sel);if(!pp)return;
+  pp[k]=t.type==="checkbox"?t.checked:t.value;
+  if(t.type==="checkbox")drawList();
+  else if(k==="title"||k==="nr"){var row=ed.querySelector('[data-sel="'+pp.id+'"] .nm');if(row)row.textContent=pp.nr+" "+(pp.title||"Uten tittel");}
+  setDirty();
+});
+ed.addEventListener("change",function(e){var t=e.target;
+  if(t.id==="p-parent"){var pq=byId(sel);if(!pq)return;if(t.value)pq.parent=t.value;else delete pq.parent;drawList();drawForm();setDirty();return;}
+  if(t.id==="file"){addFiles(t.files,imgTarget);t.value="";return;}
+  if(t.dataset.catI!=null){var i=+t.dataset.catI,old=t.dataset.old,nw=t.value.trim(),cl=state.site.categories;
+    if(!nw){t.value=old;status("En kategori må ha et navn. Bruk «Fjern» for å slette den.","err");return;}
+    if(nw===old)return;
+    if(cl.some(function(x,j){return j!==i&&x.toLowerCase()===nw.toLowerCase();})){t.value=old;status("Det finnes allerede en kategori som heter «"+nw+"».","err");return;}
+    cl[i]=nw;state.projects.forEach(function(p){if(hasCatOwn(p,old))p.category=kwOwn(p).map(function(k){return k.toLowerCase()===old.toLowerCase()?nw:k;}).join(" + ");});
+    t.dataset.old=nw;setDirty();}
+});
+ed.addEventListener("dragover",function(e){var d=e.target.closest("[data-drop]");if(d){e.preventDefault();d.classList.add("over");}});
+ed.addEventListener("dragleave",function(e){var d=e.target.closest("[data-drop]");if(d)d.classList.remove("over");});
+ed.addEventListener("drop",function(e){var d=e.target.closest("[data-drop]");if(d){e.preventDefault();d.classList.remove("over");addFiles(e.dataTransfer.files,d.dataset.drop);}});
+function nextNr(){var m=0;state.projects.forEach(function(p){var n=parseInt(p.nr,10);if(n>m)m=n;});return String(m?m+1:101);}
+
+/* ---------- saving: republish the page with the new content ---------- */
+var RESET=":root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}";
+var FONTS='<link rel="preconnect" href="https://fonts.googleapis.com">\n<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Hanken+Grotesk:wght@300;400;500;600;700&display=swap">\n';
+function buildDocument(st){
+  var css=document.getElementById("site-css").textContent, js=document.getElementById("site-js").textContent;
+  var title=st.example?"Prosjektportefølje":(st.site.name||"Prosjektportefølje");
+  var json=JSON.stringify(st).replace(/</g,"\\u003c").split(String.fromCharCode(8232)).join("\\u2028").split(String.fromCharCode(8233)).join("\\u2029");
+  return'<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>'+RESET+'</style></head><body>'+
+    '<title>'+esc(title)+'</title>\n'+FONTS+
+    '<style id="site-css">'+css+'</style>\n<div id="app"></div>\n'+
+    '<script type="application/json" id="site-data">'+json+'<\/script>\n'+
+    '<script id="site-js">'+js+'<\/script>\n</body></html>';
+}
+function save(){
+  if(saving||!dirty)return;
+  if(!artifactNs){status("Lagring er ikke tilgjengelig i denne visningen. Åpne siden i Claude for å lagre.","err");return;}
+  var st=JSON.parse(JSON.stringify(state));st.example=false;st.site.updated=new Date().toISOString().slice(0,10);
+  var html=buildDocument(st);
+  saving=true;ed.classList.add("busy");status("Publiserer …","warn");
+  artifactNs.publish(html).then(function(){dirty=false;status("Publisert. Siden lastes inn på nytt …","ok");},function(err){
+    saving=false;ed.classList.remove("busy");var c=err&&err.code;
+    if(c==="conflict")status("Siden ble endret et annet sted samtidig og lastes inn på nytt. Endringene dine her gikk tapt.","err");
+    else if(c==="not_writer"||c==="not_granted"||c==="consent_required"||c==="capability_disabled"||c==="capability_removed"||c==="not_declared")status("Du har ikke tilgang til å lagre denne siden.","err");
+    else if(c==="too_large")status("Siden er for stor. Fjern noen bilder og prøv igjen.","err");
+    else if(c==="rate_limited")status("For mange lagringer på kort tid. Vent litt og prøv igjen.","err");
+    else status("Lagringen feilet. Prøv igjen om litt.","err");
+    updateBar();
+  });
+}
+window.addEventListener("beforeunload",function(e){if(dirty&&!saving){e.preventDefault();e.returnValue="";}});
+
+/* ---------- start ---------- */
+route();
+if(window.claude&&typeof window.claude.use==="function"){
+  window.claude.use("artifact").then(function(a){artifactNs=a;}).catch(function(){});
+  window.claude.use("assets").then(function(a){assetsNs=a;refreshAssetUse();}).catch(function(){});
+  window.claude.use("user").then(function(u){return u?u.canEdit():false;}).then(function(ok){if(ok){canWrite=true;render(true);}}).catch(function(){});
+}
+})();
+</script>
+</body></html>
